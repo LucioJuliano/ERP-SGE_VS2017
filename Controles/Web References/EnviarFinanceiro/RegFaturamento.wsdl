@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Enviar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TabFinanc">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="NmUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnviarResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EnviarSoapIn">
+    <wsdl:part name="parameters" element="tns:Enviar" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegFaturamentoSoap">
+    <wsdl:operation name="Enviar">
+      <wsdl:input message="tns:EnviarSoapIn" />
+      <wsdl:output message="tns:EnviarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegFaturamentoSoap" type="tns:RegFaturamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Enviar">
+      <soap:operation soapAction="http://tempuri.org/Enviar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegFaturamentoSoap12" type="tns:RegFaturamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Enviar">
+      <soap12:operation soapAction="http://tempuri.org/Enviar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegFaturamento">
+    <wsdl:port name="RegFaturamentoSoap" binding="tns:RegFaturamentoSoap">
+      <soap:address location="http://177.19.133.130/ERP-SGE_WebService/RegFaturamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RegFaturamentoSoap12" binding="tns:RegFaturamentoSoap12">
+      <soap12:address location="http://177.19.133.130/ERP-SGE_WebService/RegFaturamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

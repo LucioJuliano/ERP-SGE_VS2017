@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ProxNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NFE" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProxNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProxNotaFiscalResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProxNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:ProxNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="ProxNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:ProxNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GerarNumNFSoap">
+    <wsdl:operation name="ProxNotaFiscal">
+      <wsdl:input message="tns:ProxNotaFiscalSoapIn" />
+      <wsdl:output message="tns:ProxNotaFiscalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GerarNumNFSoap" type="tns:GerarNumNFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProxNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/ProxNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GerarNumNFSoap12" type="tns:GerarNumNFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProxNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/ProxNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GerarNumNF">
+    <wsdl:port name="GerarNumNFSoap" binding="tns:GerarNumNFSoap">
+      <soap:address location="http://177.19.133.130/ERP-SGE_WebService/GerarNumNF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GerarNumNFSoap12" binding="tns:GerarNumNFSoap12">
+      <soap12:address location="http://177.19.133.130/ERP-SGE_WebService/GerarNumNF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

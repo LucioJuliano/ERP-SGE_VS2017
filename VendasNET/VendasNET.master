@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="VendasNET.master.cs" Inherits="VendasNET" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">        
+    <title>ERP SGE -Sistema de Gestão Empresarial Versão  2.0 .NET - 2010</title>
+    <script type="text/javascript">
+        function Mensagem(Msg) 
+        {
+            if (confirm(Msg)) 
+            {
+               return true; 
+            }
+            else {
+               return false;
+            }
+        }                   
+        function ShowDialog(Janela,Height,Width)
+        {
+            var retorno = "";            
+            showModalDialog(Janela,"window", 'help:no;status:no;scroll:yes;edge:raised;dialogWidth:'+Width.toString()+';edge:raised;dialogHeight:'+Height.toString());
+                   
+            if (retorno != "" && retorno != null) 
+                document.getElementById("ctl00_ContentPlaceHolder1_TxtReferencia").value = retorno;       
+
+        }
+        function AbrirJanelaBusca(Janela,Height,Width)
+        {          
+           window.showModalDialog("'"+Janela+"'",'_blank','dialogWidth:255px;dialogHeight:250px');
+           //eval("window.open('"+Janela+"','Busca', '','Resizable:no; DialogHeight:"+Height+"; DialogWidth:"+Width+"; Edge:raised; Help:no; Scroll:no; Status:no; Center:yes;')");
+           return false;
+           
+ 
+        }               
+        function AbrirJanela(Janela,Height,Width)
+        {           
+           eval("window.showModalDialog('"+Janela+"','','Resizable:no; DialogHeight:"+Height+"; DialogWidth:"+Width+"; Edge:raised; Help:no; Scroll:no; Status:no; Center:yes;')");                                 
+           var retorno="";
+           retorno = eval("window.showModalDialog('"+Janela+"','','Resizable:no; DialogHeight:"+Height+"; DialogWidth:"+Width+"; Edge:raised; Help:no; Scroll:no; Status:no; Center:yes;')");                                 
+           if(retorno!="" && retorno!=null)
+           {
+              document.getElementById("ctl00_ContentPlaceHolder1_TxtReferencia").value=retorno;
+           } 
+        }
+        function FecharJanela(Janela,Controle)
+        {  
+           eval("window.close()");           
+           return false;
+        }
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+<form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackErrorMessage="Tempo Limite Esgotado" AsyncPostBackTimeout="380"></asp:ScriptManager>    
+    <div style="  background-color: #fff; border: 1px solid #496077;">        
+      <div style="background-color: #FFFFFF">
+        <table id="Table1" runat="server" > 
+          <tr >
+            <td>
+              <asp:Image ID="Image1" runat="server" ImageUrl="MiniLogoTipo.jpg" />
+            </td>
+            <td >
+              <h1 style="font-size: 17px; margin: 10px auto 0px auto; color: #000000; z-index: auto;" >ERP SGE - Vendas .NET  Versão: 1.0</h1>
+            </td>
+          </tr>           
+          </table>
+          <div>
+           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+             <table id="Table2" runat="server">
+              <tr style="background-color:#3a4f63;">
+               <td>  
+                  <asp:Button id="BtnListaPedido" runat="server" Text="Lista de Pedidos" Width="100px" 
+                       Height="30px" Font-Bold="True" BackColor="#3A4F63" ForeColor="White" 
+                       Font-Size="8pt" UseSubmitBehavior="False" onclick="BtnListaPedido_Click"/>
+               </td>
+               <td>  
+                  <asp:Button id="BtnPedido" runat="server" Text="Pedido" Width="100px" 
+                       Height="30px" Font-Bold="True" BackColor="#3A4F63" ForeColor="White" 
+                       Font-Size="8pt"  UseSubmitBehavior="False" onclick="BtnPedido_Click"/>
+               </td>               
+               <td>
+                  <asp:Button id="BtnTabela" runat="server" Text="Tabela de Preço" Width="100px" 
+                       Height="30px" Font-Bold="True" BackColor="#3A4F63" ForeColor="White" 
+                       Font-Size="8pt"  UseSubmitBehavior="False" onclick="BtnTabela_Click"/>                       
+               </td>
+               <td>
+                  <asp:Button id="BtnCliente" runat="server" Text="Clientes" 
+                       Width="100px" Height="30px" Font-Bold="True" Font-Size="8pt"
+                       BackColor="#3A4F63" ForeColor="White" UseSubmitBehavior="False" 
+                       onclick="BtnCliente_Click"/>
+               </td>               
+              </tr>             
+             </table>
+            </ContentTemplate>
+           </asp:UpdatePanel>
+          </div>              
+        </div>            
+      <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">           
+       </asp:ContentPlaceHolder>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

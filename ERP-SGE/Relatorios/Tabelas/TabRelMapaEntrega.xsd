@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabRelMapaEntrega" targetNamespace="http://tempuri.org/TabRelMapaEntrega.xsd" xmlns:mstns="http://tempuri.org/TabRelMapaEntrega.xsd" xmlns="http://tempuri.org/TabRelMapaEntrega.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tab_RelMapaTableAdapter" GeneratorDataComponentClassName="Tab_RelMapaTableAdapter" Name="Tab_RelMapa" UserDataComponentName="Tab_RelMapaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T6.DESCRICAO,T1.ID_VENDA,T1.NUMDOCUMENTO,T1.FORMNF,T2.RAZAOSOCIAL,RTRIM(T1.ENDERECO)+','+RTRIM(T1.NUMERO)+' '+RTRIM(T1.COMPLEMENTO) AS ENDERECO,  T1.FONE,T1.CEP,T1.BAIRRO,T1.CIDADE,T3.ENTREGADOR,T4.VENDEDOR,T5.FORMAPGTO,T1.ID_VDMASTER,T1.VLRTOTAL,T7.VENCIMENTO,T7.VLRORIGINAL,T1.PREVENTREGA,T8.DOCUMENTO, T9.FANTASIA AS LOCALENTREGA,T1.DATACONFIRMACAO
+FROM MAPAENTREGAITENS MP
+  LEFT JOIN MVVENDA  T1 ON (T1.ID_VENDA=MP.ID_VENDA)
+  LEFT JOIN PESSOAS  T2 ON (T2.ID_PESSOA=T1.ID_PESSOA)
+  LEFT JOIN ENTREGADORES T3 ON (T3.ID_ENTREGADOR=T1.ID_ENTREGADOR)
+  LEFT JOIN VENDEDORES T4 ON (T4.ID_VENDEDOR=T1.ID_VENDEDOR)
+  LEFT JOIN FORMAPAGAMENTO T5 ON (T5.ID_FORMAPGTO=T1.ID_FORMAPGTO)
+  LEFT OUTER JOIN TABELASAUX AS T6 ON T6.CAMPO='VENDA' AND T6.CHAVE=T1.TPVENDA
+  LEFT JOIN LANCFINANCEIRO T7 ON (T7.ID_VENDA=T1.ID_VENDA)
+  LEFT JOIN TIPODOCUMENTO T8 ON (T8.ID_DOCUMENTO=T7.ID_TIPODOCUMENTO)  
+  LEFT JOIN EMPRESA_FILIAL T9 ON (T9.ID_FILIAL=T1.ID_FILIALENTREGA)  
+ WHERE  MP.ID_MAPA=1 AND MP.Status=0 
+ ORDER BY T2.RAZAOSOCIAL,T1.ID_VENDA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ENDERECO" DataSetColumn="ENDERECO" />
+              <Mapping SourceColumn="ID_VENDA" DataSetColumn="ID_VENDA" />
+              <Mapping SourceColumn="NUMDOCUMENTO" DataSetColumn="NUMDOCUMENTO" />
+              <Mapping SourceColumn="FORMNF" DataSetColumn="FORMNF" />
+              <Mapping SourceColumn="RAZAOSOCIAL" DataSetColumn="RAZAOSOCIAL" />
+              <Mapping SourceColumn="FONE" DataSetColumn="FONE" />
+              <Mapping SourceColumn="CEP" DataSetColumn="CEP" />
+              <Mapping SourceColumn="BAIRRO" DataSetColumn="BAIRRO" />
+              <Mapping SourceColumn="CIDADE" DataSetColumn="CIDADE" />
+              <Mapping SourceColumn="ENTREGADOR" DataSetColumn="ENTREGADOR" />
+              <Mapping SourceColumn="VENDEDOR" DataSetColumn="VENDEDOR" />
+              <Mapping SourceColumn="FORMAPGTO" DataSetColumn="FORMAPGTO" />
+              <Mapping SourceColumn="ID_VDMASTER" DataSetColumn="ID_VDMASTER" />
+              <Mapping SourceColumn="VLRTOTAL" DataSetColumn="VLRTOTAL" />
+              <Mapping SourceColumn="VENCIMENTO" DataSetColumn="VENCIMENTO" />
+              <Mapping SourceColumn="VLRORIGINAL" DataSetColumn="VLRORIGINAL" />
+              <Mapping SourceColumn="PREVENTREGA" DataSetColumn="PREVENTREGA" />
+              <Mapping SourceColumn="DOCUMENTO" DataSetColumn="DOCUMENTO" />
+              <Mapping SourceColumn="LOCALENTREGA" DataSetColumn="LOCALENTREGA" />
+              <Mapping SourceColumn="DATACONFIRMACAO" DataSetColumn="DATACONFIRMACAO" />
+              <Mapping SourceColumn="DESCRICAO" DataSetColumn="DESCRICAO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ResumoMapaVeiculoTableAdapter" GeneratorDataComponentClassName="ResumoMapaVeiculoTableAdapter" Name="ResumoMapaVeiculo" UserDataComponentName="ResumoMapaVeiculoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select t2.data,rtrim(t4.Veiculo)+' / '+t4.Placa as Veiculo,t3.Entregador,COUNT(*) AS CARGA,COUNT(CASE T1.STATUS WHEN 1 THEN 1 END) AS ENTREGUE,COUNT(CASE T1.STATUS WHEN 2 THEN 1 END) AS RETORNO,SUM(T5.VLRTOTAL) AS TOTAL,SUM(CASE T1.STATUS WHEN 2 THEN T5.VLRTOTAL ELSE 0 END) AS VLRRETORNO from MapaEntregaItens t1
+  left join MapaEntrega t2 on (t2.Id_Mapa=t1.Id_Mapa)
+  left join Entregadores t3 on (t3.Id_Entregador=t2.Id_Entregador)
+  left join Veiculos t4 on (t4.Id_Veiculo=t2.Id_Veiculo)
+  left join MvVenda t5 on (t5.Id_Venda=t1.Id_Venda)
+WHERE t4.VlrCarga &gt; 0 AND t2.Data='2013-03-13 00:00:00.000' and t2.Status=1
+  GROUP BY t2.data,t4.Veiculo,t4.Placa,t3.Entregador
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="Veiculo" DataSetColumn="Veiculo" />
+              <Mapping SourceColumn="CARGA" DataSetColumn="CARGA" />
+              <Mapping SourceColumn="ENTREGUE" DataSetColumn="ENTREGUE" />
+              <Mapping SourceColumn="RETORNO" DataSetColumn="RETORNO" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="VLRRETORNO" DataSetColumn="VLRRETORNO" />
+              <Mapping SourceColumn="Entregador" DataSetColumn="Entregador" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ResumoMapaEntregadorTableAdapter" GeneratorDataComponentClassName="ResumoMapaEntregadorTableAdapter" Name="ResumoMapaEntregador" UserDataComponentName="ResumoMapaEntregadorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText> select t2.data,t3.Entregador,t4.Veiculo,t4.Placa,COUNT(*) AS CARGA,COUNT(CASE T1.STATUS WHEN 1 THEN 1 END) AS ENTREGUE,COUNT(CASE T1.STATUS WHEN 2 THEN 1 END) AS RETORNO,SUM(T5.VLRTOTAL) AS TOTAL,SUM(CASE T1.STATUS WHEN 2 THEN T5.VLRTOTAL ELSE 0 END) AS VLRRETORNO from MapaEntregaItens t1
+ left join MapaEntrega t2 on (t2.Id_Mapa=t1.Id_Mapa)
+ left join Entregadores t3 on (t3.Id_Entregador=t2.Id_Entregador)
+ left join Veiculos t4 on (t4.Id_Veiculo=t2.Id_Veiculo)
+ left join MvVenda t5 on (t5.Id_Venda=t1.Id_Venda)
+ WHERE t4.VlrCarga &gt; 0 AND t2.Data='2013-03-13 00:00:00.000' and t2.Status=1
+ GROUP BY t2.data,t3.Entregador,t4.Veiculo,t4.Placa
+ order by 4
+ </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="Entregador" DataSetColumn="Entregador" />
+              <Mapping SourceColumn="Veiculo" DataSetColumn="Veiculo" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="CARGA" DataSetColumn="CARGA" />
+              <Mapping SourceColumn="ENTREGUE" DataSetColumn="ENTREGUE" />
+              <Mapping SourceColumn="RETORNO" DataSetColumn="RETORNO" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="VLRRETORNO" DataSetColumn="VLRRETORNO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabRelMapaEntrega" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="TabRelMapaEntrega" msprop:Generator_DataSetName="TabRelMapaEntrega" msprop:EnableTableAdapterManager="true" msprop:GeneratorDataSetName="TabRelMapaEntrega">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tab_RelMapa" msprop:Generator_UserTableName="Tab_RelMapa" msprop:Generator_RowDeletedName="Tab_RelMapaRowDeleted" msprop:Generator_RowChangedName="Tab_RelMapaRowChanged" msprop:Generator_RowClassName="Tab_RelMapaRow" msprop:Generator_RowChangingName="Tab_RelMapaRowChanging" msprop:Generator_RowEvArgName="Tab_RelMapaRowChangeEvent" msprop:Generator_RowEvHandlerName="Tab_RelMapaRowChangeEventHandler" msprop:Generator_TableClassName="Tab_RelMapaDataTable" msprop:Generator_TableVarName="tableTab_RelMapa" msprop:Generator_RowDeletingName="Tab_RelMapaRowDeleting" msprop:Generator_TablePropName="Tab_RelMapa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ENDERECO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ENDERECO" msprop:Generator_ColumnVarNameInTable="columnENDERECO" msprop:Generator_ColumnPropNameInRow="ENDERECO" msprop:Generator_ColumnPropNameInTable="ENDERECOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="132" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_VENDA" msprop:Generator_UserColumnName="ID_VENDA" msprop:Generator_ColumnVarNameInTable="columnID_VENDA" msprop:Generator_ColumnPropNameInRow="ID_VENDA" msprop:Generator_ColumnPropNameInTable="ID_VENDAColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NUMDOCUMENTO" msprop:Generator_UserColumnName="NUMDOCUMENTO" msprop:Generator_ColumnVarNameInTable="columnNUMDOCUMENTO" msprop:Generator_ColumnPropNameInRow="NUMDOCUMENTO" msprop:Generator_ColumnPropNameInTable="NUMDOCUMENTOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FORMNF" msprop:Generator_UserColumnName="FORMNF" msprop:Generator_ColumnVarNameInTable="columnFORMNF" msprop:Generator_ColumnPropNameInRow="FORMNF" msprop:Generator_ColumnPropNameInTable="FORMNFColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RAZAOSOCIAL" msprop:Generator_UserColumnName="RAZAOSOCIAL" msprop:Generator_ColumnVarNameInTable="columnRAZAOSOCIAL" msprop:Generator_ColumnPropNameInRow="RAZAOSOCIAL" msprop:Generator_ColumnPropNameInTable="RAZAOSOCIALColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FONE" msprop:Generator_UserColumnName="FONE" msprop:Generator_ColumnVarNameInTable="columnFONE" msprop:Generator_ColumnPropNameInRow="FONE" msprop:Generator_ColumnPropNameInTable="FONEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CEP" msprop:Generator_UserColumnName="CEP" msprop:Generator_ColumnVarNameInTable="columnCEP" msprop:Generator_ColumnPropNameInRow="CEP" msprop:Generator_ColumnPropNameInTable="CEPColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAIRRO" msprop:Generator_UserColumnName="BAIRRO" msprop:Generator_ColumnVarNameInTable="columnBAIRRO" msprop:Generator_ColumnPropNameInRow="BAIRRO" msprop:Generator_ColumnPropNameInTable="BAIRROColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CIDADE" msprop:Generator_UserColumnName="CIDADE" msprop:Generator_ColumnVarNameInTable="columnCIDADE" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ENTREGADOR" msprop:Generator_UserColumnName="ENTREGADOR" msprop:Generator_ColumnVarNameInTable="columnENTREGADOR" msprop:Generator_ColumnPropNameInRow="ENTREGADOR" msprop:Generator_ColumnPropNameInTable="ENTREGADORColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VENDEDOR" msprop:Generator_UserColumnName="VENDEDOR" msprop:Generator_ColumnVarNameInTable="columnVENDEDOR" msprop:Generator_ColumnPropNameInRow="VENDEDOR" msprop:Generator_ColumnPropNameInTable="VENDEDORColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FORMAPGTO" msprop:Generator_UserColumnName="FORMAPGTO" msprop:Generator_ColumnVarNameInTable="columnFORMAPGTO" msprop:Generator_ColumnPropNameInRow="FORMAPGTO" msprop:Generator_ColumnPropNameInTable="FORMAPGTOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_VDMASTER" msprop:Generator_UserColumnName="ID_VDMASTER" msprop:Generator_ColumnVarNameInTable="columnID_VDMASTER" msprop:Generator_ColumnPropNameInRow="ID_VDMASTER" msprop:Generator_ColumnPropNameInTable="ID_VDMASTERColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="VLRTOTAL" msprop:Generator_UserColumnName="VLRTOTAL" msprop:Generator_ColumnVarNameInTable="columnVLRTOTAL" msprop:Generator_ColumnPropNameInRow="VLRTOTAL" msprop:Generator_ColumnPropNameInTable="VLRTOTALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="VENCIMENTO" msprop:Generator_UserColumnName="VENCIMENTO" msprop:Generator_ColumnVarNameInTable="columnVENCIMENTO" msprop:Generator_ColumnPropNameInRow="VENCIMENTO" msprop:Generator_ColumnPropNameInTable="VENCIMENTOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VLRORIGINAL" msprop:Generator_UserColumnName="VLRORIGINAL" msprop:Generator_ColumnVarNameInTable="columnVLRORIGINAL" msprop:Generator_ColumnPropNameInRow="VLRORIGINAL" msprop:Generator_ColumnPropNameInTable="VLRORIGINALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PREVENTREGA" msprop:Generator_UserColumnName="PREVENTREGA" msprop:Generator_ColumnVarNameInTable="columnPREVENTREGA" msprop:Generator_ColumnPropNameInRow="PREVENTREGA" msprop:Generator_ColumnPropNameInTable="PREVENTREGAColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DOCUMENTO" msprop:Generator_UserColumnName="DOCUMENTO" msprop:Generator_ColumnVarNameInTable="columnDOCUMENTO" msprop:Generator_ColumnPropNameInRow="DOCUMENTO" msprop:Generator_ColumnPropNameInTable="DOCUMENTOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCALENTREGA" msprop:Generator_UserColumnName="LOCALENTREGA" msprop:Generator_ColumnPropNameInRow="LOCALENTREGA" msprop:Generator_ColumnVarNameInTable="columnLOCALENTREGA" msprop:Generator_ColumnPropNameInTable="LOCALENTREGAColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATACONFIRMACAO" msprop:Generator_UserColumnName="DATACONFIRMACAO" msprop:Generator_ColumnVarNameInTable="columnDATACONFIRMACAO" msprop:Generator_ColumnPropNameInRow="DATACONFIRMACAO" msprop:Generator_ColumnPropNameInTable="DATACONFIRMACAOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DESCRICAO" msprop:Generator_UserColumnName="DESCRICAO" msprop:Generator_ColumnPropNameInRow="DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnDESCRICAO" msprop:Generator_ColumnPropNameInTable="DESCRICAOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResumoMapaVeiculo" msprop:Generator_UserTableName="ResumoMapaVeiculo" msprop:Generator_RowDeletedName="ResumoMapaVeiculoRowDeleted" msprop:Generator_RowChangedName="ResumoMapaVeiculoRowChanged" msprop:Generator_RowClassName="ResumoMapaVeiculoRow" msprop:Generator_RowChangingName="ResumoMapaVeiculoRowChanging" msprop:Generator_RowEvArgName="ResumoMapaVeiculoRowChangeEvent" msprop:Generator_RowEvHandlerName="ResumoMapaVeiculoRowChangeEventHandler" msprop:Generator_TableClassName="ResumoMapaVeiculoDataTable" msprop:Generator_TableVarName="tableResumoMapaVeiculo" msprop:Generator_RowDeletingName="ResumoMapaVeiculoRowDeleting" msprop:Generator_TablePropName="ResumoMapaVeiculo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data" msprop:Generator_UserColumnName="data" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInTable="dataColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Veiculo" msprop:Generator_UserColumnName="Veiculo" msprop:Generator_ColumnPropNameInRow="Veiculo" msprop:Generator_ColumnVarNameInTable="columnVeiculo" msprop:Generator_ColumnPropNameInTable="VeiculoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CARGA" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CARGA" msprop:Generator_ColumnPropNameInRow="CARGA" msprop:Generator_ColumnVarNameInTable="columnCARGA" msprop:Generator_ColumnPropNameInTable="CARGAColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ENTREGUE" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ENTREGUE" msprop:Generator_ColumnPropNameInRow="ENTREGUE" msprop:Generator_ColumnVarNameInTable="columnENTREGUE" msprop:Generator_ColumnPropNameInTable="ENTREGUEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RETORNO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="RETORNO" msprop:Generator_ColumnPropNameInRow="RETORNO" msprop:Generator_ColumnVarNameInTable="columnRETORNO" msprop:Generator_ColumnPropNameInTable="RETORNOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="VLRRETORNO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="VLRRETORNO" msprop:Generator_ColumnPropNameInRow="VLRRETORNO" msprop:Generator_ColumnVarNameInTable="columnVLRRETORNO" msprop:Generator_ColumnPropNameInTable="VLRRETORNOColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Entregador" msprop:Generator_UserColumnName="Entregador" msprop:Generator_ColumnVarNameInTable="columnEntregador" msprop:Generator_ColumnPropNameInRow="Entregador" msprop:Generator_ColumnPropNameInTable="EntregadorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResumoMapaEntregador" msprop:Generator_UserTableName="ResumoMapaEntregador" msprop:Generator_RowDeletedName="ResumoMapaEntregadorRowDeleted" msprop:Generator_RowChangedName="ResumoMapaEntregadorRowChanged" msprop:Generator_RowClassName="ResumoMapaEntregadorRow" msprop:Generator_RowChangingName="ResumoMapaEntregadorRowChanging" msprop:Generator_RowEvArgName="ResumoMapaEntregadorRowChangeEvent" msprop:Generator_RowEvHandlerName="ResumoMapaEntregadorRowChangeEventHandler" msprop:Generator_TableClassName="ResumoMapaEntregadorDataTable" msprop:Generator_TableVarName="tableResumoMapaEntregador" msprop:Generator_RowDeletingName="ResumoMapaEntregadorRowDeleting" msprop:Generator_TablePropName="ResumoMapaEntregador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data" msprop:Generator_UserColumnName="data" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInTable="dataColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Entregador" msprop:Generator_UserColumnName="Entregador" msprop:Generator_ColumnPropNameInRow="Entregador" msprop:Generator_ColumnVarNameInTable="columnEntregador" msprop:Generator_ColumnPropNameInTable="EntregadorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Veiculo" msprop:Generator_UserColumnName="Veiculo" msprop:Generator_ColumnPropNameInRow="Veiculo" msprop:Generator_ColumnVarNameInTable="columnVeiculo" msprop:Generator_ColumnPropNameInTable="VeiculoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Placa" msprop:Generator_UserColumnName="Placa" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInTable="PlacaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CARGA" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CARGA" msprop:Generator_ColumnPropNameInRow="CARGA" msprop:Generator_ColumnVarNameInTable="columnCARGA" msprop:Generator_ColumnPropNameInTable="CARGAColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ENTREGUE" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ENTREGUE" msprop:Generator_ColumnPropNameInRow="ENTREGUE" msprop:Generator_ColumnVarNameInTable="columnENTREGUE" msprop:Generator_ColumnPropNameInTable="ENTREGUEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RETORNO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="RETORNO" msprop:Generator_ColumnPropNameInRow="RETORNO" msprop:Generator_ColumnVarNameInTable="columnRETORNO" msprop:Generator_ColumnPropNameInTable="RETORNOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="VLRRETORNO" msdata:ReadOnly="true" msprop:Generator_UserColumnName="VLRRETORNO" msprop:Generator_ColumnPropNameInRow="VLRRETORNO" msprop:Generator_ColumnVarNameInTable="columnVLRRETORNO" msprop:Generator_ColumnPropNameInTable="VLRRETORNOColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Tab_RelMapa" />
+      <xs:field xpath="mstns:ID_VENDA" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

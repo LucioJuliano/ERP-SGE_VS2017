@@ -1,0 +1,11 @@
+http://www.edonkey2000.com/server.met
+http://ocbmaurice.dyndns.org/pl/slist.pl/server.met?download/server-good.met
+http://www.filedealer.de/ocb/slist.pl/server.met?download/server-good.met 
+http://213.198.62.37/server/fqwrfrjatz/best/server.met 
+http://serverlist.no-ip.org/server.met 
+http://www.redgiant.de/down/edonkey/server.met
+ed2k://|server|77.247.178.245|4242
+ed2k://|server|87.230.83.44|4661
+ed2k://|server|77.247.178.244|4242
+ed2k://|server|193.138.221.214|4242
+ed2k://|server|193.138.205.25|5000

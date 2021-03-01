@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabProducao" targetNamespace="http://tempuri.org/TabProducao.xsd" xmlns:mstns="http://tempuri.org/TabProducao.xsd" xmlns="http://tempuri.org/TabProducao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MapaTableAdapter" GeneratorDataComponentClassName="MapaTableAdapter" Name="Mapa" UserDataComponentName="MapaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T1.Id_Mapa,T1.Data,T1.Observacao,T1.Qtde,T1.Status,T2.Produto,T2.QtdeFabrica,T2.Observacao AS ObsProduto,T1.Lote FROM MapaProducao T1
+  LEFT JOIN Producao T2 ON (T2.Id_Producao=T1.Id_ProdProducao)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Mapa" DataSetColumn="Id_Mapa" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="Observacao" DataSetColumn="Observacao" />
+              <Mapping SourceColumn="Qtde" DataSetColumn="Qtde" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Produto" DataSetColumn="Produto" />
+              <Mapping SourceColumn="QtdeFabrica" DataSetColumn="QtdeFabrica" />
+              <Mapping SourceColumn="ObsProduto" DataSetColumn="ObsProduto" />
+              <Mapping SourceColumn="Lote" DataSetColumn="Lote" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MapaItensTableAdapter" GeneratorDataComponentClassName="MapaItensTableAdapter" Name="MapaItens" UserDataComponentName="MapaItensTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T1.ID_MAPA,T1.Id_Produto,t2.Referencia,t2.Descricao,T1.QTDE FROM MapaProducaoItens T1
+  LEFT JOIN Produtos t2 on (t2.Id_Produto=T1.Id_Produto)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_MAPA" DataSetColumn="ID_MAPA" />
+              <Mapping SourceColumn="Id_Produto" DataSetColumn="Id_Produto" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="QTDE" DataSetColumn="QTDE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MapaPrdTableAdapter" GeneratorDataComponentClassName="MapaPrdTableAdapter" Name="MapaPrd" UserDataComponentName="MapaPrdTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T1.Id_Produto,t2.Referencia,t2.Descricao,T1.QTDE,T1.QtdeExtra FROM MapaProducaoProdutos T1
+  LEFT JOIN Produtos t2 on (t2.Id_Produto=T1.Id_Produto)
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Produto" DataSetColumn="Id_Produto" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="QTDE" DataSetColumn="QTDE" />
+              <Mapping SourceColumn="QtdeExtra" DataSetColumn="QtdeExtra" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabProducao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="TabProducao" msprop:Generator_DataSetName="TabProducao" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Mapa" msprop:Generator_UserTableName="Mapa" msprop:Generator_RowDeletedName="MapaRowDeleted" msprop:Generator_RowChangedName="MapaRowChanged" msprop:Generator_RowClassName="MapaRow" msprop:Generator_RowChangingName="MapaRowChanging" msprop:Generator_RowEvArgName="MapaRowChangeEvent" msprop:Generator_RowEvHandlerName="MapaRowChangeEventHandler" msprop:Generator_TableClassName="MapaDataTable" msprop:Generator_TableVarName="tableMapa" msprop:Generator_RowDeletingName="MapaRowDeleting" msprop:Generator_TablePropName="Mapa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Mapa" msprop:Generator_UserColumnName="Id_Mapa" msprop:Generator_ColumnPropNameInRow="Id_Mapa" msprop:Generator_ColumnVarNameInTable="columnId_Mapa" msprop:Generator_ColumnPropNameInTable="Id_MapaColumn" type="xs:int" />
+              <xs:element name="Data" msprop:Generator_UserColumnName="Data" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInTable="DataColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Observacao" msprop:Generator_UserColumnName="Observacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Qtde" msprop:Generator_UserColumnName="Qtde" msprop:Generator_ColumnPropNameInRow="Qtde" msprop:Generator_ColumnVarNameInTable="columnQtde" msprop:Generator_ColumnPropNameInTable="QtdeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Produto" msprop:Generator_UserColumnName="Produto" msprop:Generator_ColumnPropNameInRow="Produto" msprop:Generator_ColumnVarNameInTable="columnProduto" msprop:Generator_ColumnPropNameInTable="ProdutoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QtdeFabrica" msprop:Generator_UserColumnName="QtdeFabrica" msprop:Generator_ColumnPropNameInRow="QtdeFabrica" msprop:Generator_ColumnVarNameInTable="columnQtdeFabrica" msprop:Generator_ColumnPropNameInTable="QtdeFabricaColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ObsProduto" msprop:Generator_UserColumnName="ObsProduto" msprop:Generator_ColumnVarNameInTable="columnObsProduto" msprop:Generator_ColumnPropNameInRow="ObsProduto" msprop:Generator_ColumnPropNameInTable="ObsProdutoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lote" msprop:Generator_UserColumnName="Lote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInTable="LoteColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MapaItens" msprop:Generator_UserTableName="MapaItens" msprop:Generator_RowDeletedName="MapaItensRowDeleted" msprop:Generator_RowChangedName="MapaItensRowChanged" msprop:Generator_RowClassName="MapaItensRow" msprop:Generator_RowChangingName="MapaItensRowChanging" msprop:Generator_RowEvArgName="MapaItensRowChangeEvent" msprop:Generator_RowEvHandlerName="MapaItensRowChangeEventHandler" msprop:Generator_TableClassName="MapaItensDataTable" msprop:Generator_TableVarName="tableMapaItens" msprop:Generator_RowDeletingName="MapaItensRowDeleting" msprop:Generator_TablePropName="MapaItens">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_MAPA" msprop:Generator_UserColumnName="ID_MAPA" msprop:Generator_ColumnPropNameInRow="ID_MAPA" msprop:Generator_ColumnVarNameInTable="columnID_MAPA" msprop:Generator_ColumnPropNameInTable="ID_MAPAColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_Produto" msprop:Generator_UserColumnName="Id_Produto" msprop:Generator_ColumnPropNameInRow="Id_Produto" msprop:Generator_ColumnVarNameInTable="columnId_Produto" msprop:Generator_ColumnPropNameInTable="Id_ProdutoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_UserColumnName="Referencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_UserColumnName="Descricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QTDE" msprop:Generator_UserColumnName="QTDE" msprop:Generator_ColumnPropNameInRow="QTDE" msprop:Generator_ColumnVarNameInTable="columnQTDE" msprop:Generator_ColumnPropNameInTable="QTDEColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MapaPrd" msprop:Generator_UserTableName="MapaPrd" msprop:Generator_RowDeletedName="MapaPrdRowDeleted" msprop:Generator_RowChangedName="MapaPrdRowChanged" msprop:Generator_RowClassName="MapaPrdRow" msprop:Generator_RowChangingName="MapaPrdRowChanging" msprop:Generator_RowEvArgName="MapaPrdRowChangeEvent" msprop:Generator_RowEvHandlerName="MapaPrdRowChangeEventHandler" msprop:Generator_TableClassName="MapaPrdDataTable" msprop:Generator_TableVarName="tableMapaPrd" msprop:Generator_RowDeletingName="MapaPrdRowDeleting" msprop:Generator_TablePropName="MapaPrd">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Produto" msprop:Generator_UserColumnName="Id_Produto" msprop:Generator_ColumnPropNameInRow="Id_Produto" msprop:Generator_ColumnVarNameInTable="columnId_Produto" msprop:Generator_ColumnPropNameInTable="Id_ProdutoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_UserColumnName="Referencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_UserColumnName="Descricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QTDE" msprop:Generator_UserColumnName="QTDE" msprop:Generator_ColumnPropNameInRow="QTDE" msprop:Generator_ColumnVarNameInTable="columnQTDE" msprop:Generator_ColumnPropNameInTable="QTDEColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QtdeExtra" msprop:Generator_UserColumnName="QtdeExtra" msprop:Generator_ColumnPropNameInRow="QtdeExtra" msprop:Generator_ColumnVarNameInTable="columnQtdeExtra" msprop:Generator_ColumnPropNameInTable="QtdeExtraColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Mapa" />
+      <xs:field xpath="mstns:Id_Mapa" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Mapa_MapaItens" msdata:parent="Mapa" msdata:child="MapaItens" msdata:parentkey="Id_Mapa" msdata:childkey="ID_MAPA" msprop:Generator_UserRelationName="Mapa_MapaItens" msprop:Generator_RelationVarName="relationMapa_MapaItens" msprop:Generator_UserChildTable="MapaItens" msprop:Generator_UserParentTable="Mapa" msprop:Generator_ParentPropName="MapaRow" msprop:Generator_ChildPropName="GetMapaItensRows" />
+      <msdata:Relationship name="Mapa_MapaPrd" msdata:parent="Mapa" msdata:child="MapaPrd" msdata:parentkey="Id_Mapa" msdata:childkey="Id_Produto" msprop:Generator_UserRelationName="Mapa_MapaPrd" msprop:Generator_RelationVarName="relationMapa_MapaPrd" msprop:Generator_UserChildTable="MapaPrd" msprop:Generator_UserParentTable="Mapa" msprop:Generator_ParentPropName="MapaRow" msprop:Generator_ChildPropName="GetMapaPrdRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

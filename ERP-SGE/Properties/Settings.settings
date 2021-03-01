@@ -1,0 +1,62 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ERP_SGE.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BD_ERP_SGE" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=Lucio-TI;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=Lucio-TI;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=LUCIO-TI;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=LUCIO-TI;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SERVIDOR;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SERVIDOR;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;;</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=LUCIO-NOTEBOOK;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=LUCIO-NOTEBOOK;Initial Catalog=BD_ERP_SGE;User ID=talimpo; Password=systalimpo; MultipleActiveResultSets=True;</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=Trabalho;Initial Catalog=BD_ERP_SGE;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=Trabalho;Initial Catalog=BD_ERP_SGE;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=Trabalho;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo;Password=systalimpo&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=Trabalho;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo;Password=systalimpo</Value>
+    </Setting>
+    <Setting Name="BD_ERP_SGEConnectionString5" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=LUCIO-TI\SQL2016;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo;Password=systalimpo&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=LUCIO-TI\SQL2016;Initial Catalog=BD_ERP_SGE;Persist Security Info=True;User ID=talimpo;Password=systalimpo</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

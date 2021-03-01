@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SaldoEstoque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeServidor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Porta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaldoEstoqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaldoEstoqueResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrevEntrega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeServidor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Porta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrevEntregaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrevEntregaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DtBalanco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ref" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeServidor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Porta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DtBalancoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DtBalancoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaldoEstoqueSoapIn">
+    <wsdl:part name="parameters" element="tns:SaldoEstoque" />
+  </wsdl:message>
+  <wsdl:message name="SaldoEstoqueSoapOut">
+    <wsdl:part name="parameters" element="tns:SaldoEstoqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrevEntregaSoapIn">
+    <wsdl:part name="parameters" element="tns:PrevEntrega" />
+  </wsdl:message>
+  <wsdl:message name="PrevEntregaSoapOut">
+    <wsdl:part name="parameters" element="tns:PrevEntregaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DtBalancoSoapIn">
+    <wsdl:part name="parameters" element="tns:DtBalanco" />
+  </wsdl:message>
+  <wsdl:message name="DtBalancoSoapOut">
+    <wsdl:part name="parameters" element="tns:DtBalancoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultaSaldoSoap">
+    <wsdl:operation name="SaldoEstoque">
+      <wsdl:input message="tns:SaldoEstoqueSoapIn" />
+      <wsdl:output message="tns:SaldoEstoqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrevEntrega">
+      <wsdl:input message="tns:PrevEntregaSoapIn" />
+      <wsdl:output message="tns:PrevEntregaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DtBalanco">
+      <wsdl:input message="tns:DtBalancoSoapIn" />
+      <wsdl:output message="tns:DtBalancoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaSaldoSoap" type="tns:ConsultaSaldoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaldoEstoque">
+      <soap:operation soapAction="http://tempuri.org/SaldoEstoque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrevEntrega">
+      <soap:operation soapAction="http://tempuri.org/PrevEntrega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DtBalanco">
+      <soap:operation soapAction="http://tempuri.org/DtBalanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaSaldoSoap12" type="tns:ConsultaSaldoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaldoEstoque">
+      <soap12:operation soapAction="http://tempuri.org/SaldoEstoque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrevEntrega">
+      <soap12:operation soapAction="http://tempuri.org/PrevEntrega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DtBalanco">
+      <soap12:operation soapAction="http://tempuri.org/DtBalanco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaSaldo">
+    <wsdl:port name="ConsultaSaldoSoap" binding="tns:ConsultaSaldoSoap">
+      <soap:address location="http://177.19.133.130/WSSaldoEstoque/BuscaSaldoEstoque.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaSaldoSoap12" binding="tns:ConsultaSaldoSoap12">
+      <soap12:address location="http://177.19.133.130/WSSaldoEstoque/BuscaSaldoEstoque.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

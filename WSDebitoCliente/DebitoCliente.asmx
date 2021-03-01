@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="DebitoCliente.asmx.cs" Class="WSDebitoCliente.DebitoCliente" %>

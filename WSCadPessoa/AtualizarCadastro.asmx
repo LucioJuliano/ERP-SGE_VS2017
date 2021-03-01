@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="AtualizarCadastro.asmx.cs" Class="WSCadPessoa.AtualizarCadastro" %>

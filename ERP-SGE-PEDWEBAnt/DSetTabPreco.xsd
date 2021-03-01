@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSetTabPreco" targetNamespace="http://tempuri.org/DSetTabPreco.xsd" xmlns:mstns="http://tempuri.org/DSetTabPreco.xsd" xmlns="http://tempuri.org/DSetTabPreco.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="BD_ERP_SGEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGEConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.BD_ERP_SGEConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabPrecoTableAdapter" GeneratorDataComponentClassName="TabPrecoTableAdapter" Name="TabPreco" UserDataComponentName="TabPrecoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGEConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T2.Grupo,T1.ID_PRODUTO,T1.Referencia,T1.Descricao,T1.PrcAtacado FROM Produtos T1
+ LEFT JOIN GrupoProduto T2 ON (T2.Id_Grupo=T1.Id_Grupo)
+ WHERE T2.ListaVenda=1 AND T2.ListaWeb=1
+ </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Grupo" DataSetColumn="Grupo" />
+              <Mapping SourceColumn="ID_PRODUTO" DataSetColumn="ID_PRODUTO" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="PrcAtacado" DataSetColumn="PrcAtacado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SaldoVdFinancTableAdapter" GeneratorDataComponentClassName="SaldoVdFinancTableAdapter" Name="SaldoVdFinanc" UserDataComponentName="SaldoVdFinancTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGEConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T2.Id_Produto,T2.Referencia,T2.Descricao,T3.Grupo,T1.Saldo FROM SaldoPrdCliente T1
+ LEFT JOIN Produtos T2 ON (T2.Id_Produto=T1.Id_Produto)
+ LEFT JOIN GrupoProduto T3 ON (T3.Id_Grupo=T2.Id_Grupo)
+WHERE T1.Saldo &gt; 0  and T1.Id_Pessoa=14456</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Produto" DataSetColumn="Id_Produto" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="Grupo" DataSetColumn="Grupo" />
+              <Mapping SourceColumn="Saldo" DataSetColumn="Saldo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSetTabPreco" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSetTabPreco" msprop:GeneratorDataSetName="DSetTabPreco">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TabPreco" msprop:Generator_UserTableName="TabPreco" msprop:Generator_RowDeletedName="TabPrecoRowDeleted" msprop:Generator_RowChangedName="TabPrecoRowChanged" msprop:Generator_RowClassName="TabPrecoRow" msprop:Generator_RowChangingName="TabPrecoRowChanging" msprop:Generator_RowEvArgName="TabPrecoRowChangeEvent" msprop:Generator_RowEvHandlerName="TabPrecoRowChangeEventHandler" msprop:Generator_TableClassName="TabPrecoDataTable" msprop:Generator_TableVarName="tableTabPreco" msprop:Generator_RowDeletingName="TabPrecoRowDeleting" msprop:Generator_TablePropName="TabPreco">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Grupo" msprop:Generator_UserColumnName="Grupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_PRODUTO" msprop:Generator_UserColumnName="ID_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_PRODUTOColumn" type="xs:int" />
+              <xs:element name="Referencia" msprop:Generator_UserColumnName="Referencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_UserColumnName="Descricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrcAtacado" msprop:Generator_UserColumnName="PrcAtacado" msprop:Generator_ColumnPropNameInRow="PrcAtacado" msprop:Generator_ColumnVarNameInTable="columnPrcAtacado" msprop:Generator_ColumnPropNameInTable="PrcAtacadoColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SaldoVdFinanc" msprop:Generator_UserTableName="SaldoVdFinanc" msprop:Generator_RowDeletedName="SaldoVdFinancRowDeleted" msprop:Generator_TableClassName="SaldoVdFinancDataTable" msprop:Generator_RowChangedName="SaldoVdFinancRowChanged" msprop:Generator_RowClassName="SaldoVdFinancRow" msprop:Generator_RowChangingName="SaldoVdFinancRowChanging" msprop:Generator_RowEvArgName="SaldoVdFinancRowChangeEvent" msprop:Generator_RowEvHandlerName="SaldoVdFinancRowChangeEventHandler" msprop:Generator_TablePropName="SaldoVdFinanc" msprop:Generator_TableVarName="tableSaldoVdFinanc" msprop:Generator_RowDeletingName="SaldoVdFinancRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Produto" msprop:Generator_UserColumnName="Id_Produto" msprop:Generator_ColumnPropNameInRow="Id_Produto" msprop:Generator_ColumnVarNameInTable="columnId_Produto" msprop:Generator_ColumnPropNameInTable="Id_ProdutoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_UserColumnName="Referencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_UserColumnName="Descricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Grupo" msprop:Generator_UserColumnName="Grupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Saldo" msprop:Generator_UserColumnName="Saldo" msprop:Generator_ColumnPropNameInRow="Saldo" msprop:Generator_ColumnVarNameInTable="columnSaldo" msprop:Generator_ColumnPropNameInTable="SaldoColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TabPreco" />
+      <xs:field xpath="mstns:ID_PRODUTO" />
+    </xs:unique>
+    <xs:unique name="SaldoVdFinanc_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:SaldoVdFinanc" />
+      <xs:field xpath="mstns:Id_Produto" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

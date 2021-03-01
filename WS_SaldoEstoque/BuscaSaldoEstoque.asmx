@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="BuscaSaldoEstoque.asmx.cs" Class="WS_SaldoEstoque.ConsultaSaldo" %>

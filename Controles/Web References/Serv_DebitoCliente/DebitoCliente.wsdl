@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://grupotalimpo.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://grupotalimpo.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://grupotalimpo.org/">
+      <s:element name="VerificarDebito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocCnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarDebitoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificarDebitoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificarDebitoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificarDebito" />
+  </wsdl:message>
+  <wsdl:message name="VerificarDebitoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificarDebitoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DebitoClienteSoap">
+    <wsdl:operation name="VerificarDebito">
+      <wsdl:input message="tns:VerificarDebitoSoapIn" />
+      <wsdl:output message="tns:VerificarDebitoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DebitoClienteSoap" type="tns:DebitoClienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarDebito">
+      <soap:operation soapAction="http://grupotalimpo.org/VerificarDebito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DebitoClienteSoap12" type="tns:DebitoClienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarDebito">
+      <soap12:operation soapAction="http://grupotalimpo.org/VerificarDebito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DebitoCliente">
+    <wsdl:port name="DebitoClienteSoap" binding="tns:DebitoClienteSoap">
+      <soap:address location="http://177.19.133.130/WSDebitoCliente/DebitoCliente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DebitoClienteSoap12" binding="tns:DebitoClienteSoap12">
+      <soap12:address location="http://177.19.133.130/WSDebitoCliente/DebitoCliente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

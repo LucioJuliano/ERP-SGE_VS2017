@@ -1,0 +1,2046 @@
+
+USE [BD_ERP_SGE]
+GO
+/****** Object:  User [talimpo]    Script Date: 12/21/2012 11:09:07 ******/
+CREATE USER [talimpo] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[Alertas]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Alertas](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Usuario] [int] NULL,
+	[Id_UsuRem] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Data] [datetime] NULL,
+	[TpAlerta] [int] NULL,
+	[DtAlerta] [datetime] NULL,
+	[Alerta] [text] NULL,
+	[DiaSemana] [int] NULL,
+	[DiaMes] [int] NULL,
+	[Status] [int] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AIDF]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[AIDF](
+	[Id_Lanc] [int] NOT NULL,
+	[DtAutorizacao] [datetime] NULL,
+	[NumAutorizacao] [char](20) NULL,
+	[NumInicial] [int] NULL,
+	[NumFinal] [int] NULL,
+	[Validade] [datetime] NULL,
+ CONSTRAINT [PK_AIDF] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[AgenteCobrador]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[AgenteCobrador](
+	[Id_Agente] [int] NOT NULL,
+	[Agente] [char](60) NULL,
+ CONSTRAINT [PK_AgenteCobrador] PRIMARY KEY CLUSTERED 
+(
+	[Id_Agente] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[AgendaVisita]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[AgendaVisita](
+	[Id_Lanc] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[Id_Vendedor] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Venda] [int] NULL,
+	[Objetivo] [text] NULL,
+	[DtRetorno] [datetime] NULL,
+	[Retorno] [text] NULL,
+	[Id_UsuLanc] [int] NULL,
+	[Id_UsuRet] [int] NULL,
+	[Status] [int] NULL,
+	[DtVisita] [datetime] NULL,
+	[Cliente] [char](100) NULL,
+	[Id_vendvisita] [int] NULL,
+ CONSTRAINT [PK_AgendaVisita] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[AcessoUsuario]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[AcessoUsuario](
+	[Id_Usuario] [int] NOT NULL,
+	[Opcao] [char](60) NOT NULL,
+	[Acesso] [int] NULL,
+ CONSTRAINT [PK_AcessoUsuario] PRIMARY KEY CLUSTERED 
+(
+	[Id_Usuario] ASC,
+	[Opcao] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ComissaoPrdCliente]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ComissaoPrdCliente](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Produto] [int] NULL,
+	[P_Comissao] [float] NULL,
+ CONSTRAINT [PK_ComissaoPrdCliente] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CFOP]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[CFOP](
+	[Id_CFOP] [int] NOT NULL,
+	[CFOP] [char](5) NULL,
+	[Descricao] [char](100) NULL,
+	[Natureza] [char](50) NULL,
+ CONSTRAINT [PK_CFOP] PRIMARY KEY CLUSTERED 
+(
+	[Id_CFOP] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[CentroCusto]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[CentroCusto](
+	[Id_Custo] [int] NOT NULL,
+	[Id_GrpCusto] [int] NULL,
+	[Custo] [char](100) NULL,
+ CONSTRAINT [PK_CentroCusto] PRIMARY KEY CLUSTERED 
+(
+	[Id_Custo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[CaixaBalcao]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CaixaBalcao](
+	[Id_Caixa] [int] NOT NULL,
+	[Id_Filial] [int] NULL,
+	[VlrInicial] [float] NULL,
+	[Status] [int] NULL,
+	[Id_Usuario] [int] NULL,
+	[DtHrAbertura] [datetime] NULL,
+	[Observacao] [text] NULL,
+	[DtHrEnc] [datetime] NULL,
+	[VlrTotal] [float] NULL,
+	[Data] [datetime] NULL,
+ CONSTRAINT [PK_Caixa] PRIMARY KEY CLUSTERED 
+(
+	[Id_Caixa] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Bancos]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Bancos](
+	[Id_Banco] [int] NOT NULL,
+	[Banco] [char](40) NULL,
+	[NumBanco] [int] NULL,
+	[NumAgencia] [char](15) NULL,
+	[Agencia] [char](30) NULL,
+	[Conta] [char](15) NULL,
+	[Fone] [char](10) NULL,
+	[Gerente] [char](30) NULL,
+	[DigConta] [int] NULL,
+ CONSTRAINT [PK_Bancos] PRIMARY KEY CLUSTERED 
+(
+	[Id_Banco] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Auditoria]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Auditoria](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Usuario] [int] NULL,
+	[Terminal] [char](30) NULL,
+	[Data] [datetime] NULL,
+	[Opcao] [char](50) NULL,
+	[Id_Chave] [int] NULL,
+	[Documento] [char](20) NULL,
+	[Operacao] [int] NULL,
+	[Descricao] [text] NULL,
+ CONSTRAINT [PK_Auditoria] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [Documento] ON [dbo].[Auditoria] 
+(
+	[Documento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [Faturamento] ON [dbo].[Auditoria] 
+(
+	[Id_Usuario] ASC,
+	[Opcao] ASC,
+	[Operacao] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdChave] ON [dbo].[Auditoria] 
+(
+	[Id_Chave] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Vendedores]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Vendedores](
+	[Id_Vendedor] [int] NOT NULL,
+	[Vendedor] [char](60) NULL,
+	[Comissao] [float] NULL,
+	[Telefone] [char](10) NULL,
+	[Celular] [char](10) NULL,
+	[Ativo] [int] NULL,
+	[EntraRel] [int] NULL,
+	[DISTRIBUIDOR] [int] NULL,
+	[Email] [char](200) NULL,
+ CONSTRAINT [PK_Vendedores] PRIMARY KEY CLUSTERED 
+(
+	[Id_Vendedor] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Usuarios](
+	[Id_Usuario] [int] NOT NULL,
+	[Usuario] [char](30) NULL,
+	[Senha] [char](100) NULL,
+	[DtHrUltAcesso] [datetime] NULL,
+	[Id_Filial] [int] NULL,
+	[Id_Vendedor] [int] NULL,
+	[SeusMov] [int] NULL,
+	[SolicAutCanc] [int] NULL,
+	[LiberaDebito] [int] NULL,
+	[LiberaEstoque] [int] NULL,
+	[MostraPreco] [int] NULL,
+	[Faturamento] [int] NULL,
+	[liberapreco] [int] NULL,
+	[MultplaInstancia] [int] NULL,
+	[AlteraFinanceiro] [int] NULL,
+	[AlterarProduto] [int] NULL,
+	[AlterarPessoa] [int] NULL,
+	[AlterarInstalacao] [int] NULL,
+	[ImpResumido] [int] NULL,
+	[email] [char](200) NULL,
+	[EmailAltPrd] [int] NULL,
+	[id_entregador] [int] NULL,
+	[SemMovEst] [int] NULL,
+	[VERIFICARESTMIN] [int] NULL,
+	[EnviarFinanc] [int] NULL,
+	[LIMPAESTOQUE] [int] NULL,
+	[ATUALIZAESTOQUE] [int] NULL,
+	[ExcluirReg] [int] NULL,
+	[ATLZ_BD] [int] NULL,
+	[ALTITEMVD] [int] NULL,
+	[BLOQDESC] [int] NULL,
+	[telemarketing] [int] NULL,
+ CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
+(
+	[Id_Usuario] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Transportadoras]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Transportadoras](
+	[Id_Transportadora] [int] NOT NULL,
+	[RazaoSocial] [char](100) NULL,
+	[Fantasia] [char](100) NULL,
+	[CNPJ] [char](20) NULL,
+	[Insc_UF] [char](15) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Numero] [char](10) NULL,
+	[Complemento] [char](20) NULL,
+	[Bairro] [char](30) NULL,
+	[Cidade] [char](30) NULL,
+	[Id_Uf] [int] NULL,
+	[Email] [char](200) NULL,
+	[Fone] [char](10) NULL,
+	[Fax] [char](10) NULL,
+	[Contato] [char](30) NULL,
+	[Celular] [char](10) NULL,
+ CONSTRAINT [PK_Transportadoras] PRIMARY KEY CLUSTERED 
+(
+	[Id_Transportadora] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TipoDocumento]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TipoDocumento](
+	[Id_Documento] [int] NOT NULL,
+	[Documento] [char](40) NULL,
+	[TxAdm] [float] NULL,
+	[TxMulta] [float] NULL,
+	[TxJuro] [float] NULL,
+	[CODECF] [int] NULL,
+	[BAIXA] [int] NULL,
+	[DIAS] [int] NULL,
+	[IDSERVIDOR] [int] NULL,
+	[RESUMOCX] [int] NULL,
+ CONSTRAINT [PK_TipoDocumento] PRIMARY KEY CLUSTERED 
+(
+	[Id_Documento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TabelasAux]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TabelasAux](
+	[Id_Chave] [int] NOT NULL,
+	[Campo] [char](15) NULL,
+	[Chave] [char](5) NULL,
+	[Descricao] [char](60) NULL,
+	[Estoque] [int] NULL,
+	[Financeiro] [int] NULL,
+	[Dief] [int] NULL,
+	[VerificaDeb] [int] NULL,
+	[Comissao] [int] NULL,
+	[VerPrcMin] [int] NULL,
+ CONSTRAINT [PK_TabelasAux] PRIMARY KEY CLUSTERED 
+(
+	[Id_Chave] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TabelaID]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TabelaID](
+	[Tabela] [char](20) NOT NULL,
+	[ID] [int] NULL,
+ CONSTRAINT [PK_TabelaID] PRIMARY KEY CLUSTERED 
+(
+	[Tabela] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[SaldoPrdCliente]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SaldoPrdCliente](
+	[Id_Pessoa] [int] NOT NULL,
+	[Id_Produto] [int] NOT NULL,
+	[Saldo] [decimal](18, 3) NULL,
+ CONSTRAINT [PK_SaldoPrdCliente] PRIMARY KEY CLUSTERED 
+(
+	[Id_Pessoa] ASC,
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SaldoEstoqueFiscal]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SaldoEstoqueFiscal](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Data] [datetime] NULL,
+	[SldAnterior] [decimal](18, 3) NULL,
+	[Entradas] [decimal](18, 3) NULL,
+	[Saidas] [decimal](18, 3) NULL,
+	[Saldo] [decimal](18, 3) NULL,
+	[Id_Filial] [int] NULL,
+ CONSTRAINT [PK_SaldoEstoqueFiscal_1] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SaldoEstoque]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SaldoEstoque](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Data] [datetime] NULL,
+	[SldAnterior] [decimal](18, 3) NULL,
+	[Entradas] [decimal](18, 3) NULL,
+	[Saidas] [decimal](18, 3) NULL,
+	[Saldo] [decimal](18, 3) NULL,
+ CONSTRAINT [PK_SaldoEstoque_1] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdProduto] ON [dbo].[SaldoEstoque] 
+(
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdProdutoData] ON [dbo].[SaldoEstoque] 
+(
+	[Id_Produto] ASC,
+	[Data] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SaldoContaCaixa]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SaldoContaCaixa](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Caixa] [int] NULL,
+	[Id_Documento] [int] NULL,
+	[Data] [datetime] NULL,
+	[SaldoAnterior] [float] NULL,
+	[Credito] [float] NULL,
+	[Debito] [float] NULL,
+	[Saldo] [float] NULL,
+	[Status] [int] NULL,
+ CONSTRAINT [PK_SaldoContaCaixa_1] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Rotas]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Rotas](
+	[Id_Rota] [int] NOT NULL,
+	[Rota] [char](60) NULL,
+	[Responsavel] [char](30) NULL,
+ CONSTRAINT [PK_Rotas] PRIMARY KEY CLUSTERED 
+(
+	[Id_Rota] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[RamoAtividade]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[RamoAtividade](
+	[Id_Atividade] [int] NOT NULL,
+	[Atividade] [char](40) NULL,
+ CONSTRAINT [PK_RamoAtividade] PRIMARY KEY CLUSTERED 
+(
+	[Id_Atividade] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ProventosDescontos]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ProventosDescontos](
+	[Id_Codigo] [int] NOT NULL,
+	[ProvDesc] [int] NULL,
+	[Descricao] [char](60) NULL,
+	[Tipo] [int] NULL,
+	[Valor] [float] NULL,
+ CONSTRAINT [PK_ProventosDescontos] PRIMARY KEY CLUSTERED 
+(
+	[Id_Codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ProvDescFunc]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ProvDescFunc](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Func] [int] NOT NULL,
+	[MesAno] [char](10) NULL,
+	[Id_ProvDesc] [int] NULL,
+	[Valor] [float] NULL,
+	[Descricao] [char](30) NULL,
+ CONSTRAINT [PK_ProvDescFunc] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC,
+	[Id_Func] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Promocoes]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Promocoes](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[DtInicio] [datetime] NULL,
+	[DtFinal] [datetime] NULL,
+	[VerifSldGeral] [int] NULL,
+	[Qtde] [decimal](18, 3) NULL,
+	[PrcVarejo] [float] NULL,
+	[PrcAtacado] [float] NULL,
+	[PrcMinimo] [float] NULL,
+	[PrcEspecial] [float] NULL,
+	[QtdeVenda] [decimal](18, 3) NULL,
+	[CodPromocao] [char](15) NULL,
+	[Distribuidor] [int] NULL,
+ CONSTRAINT [PK_Promocoes] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ProdutosKit]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProdutosKit](
+	[Id_Item] [int] NOT NULL,
+	[Id_PrdMaster] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [numeric](18, 3) NULL,
+ CONSTRAINT [PK_KitItens] PRIMARY KEY CLUSTERED 
+(
+	[Id_Item] ASC,
+	[Id_PrdMaster] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Produtos]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Produtos](
+	[Id_Produto] [int] NOT NULL,
+	[Referencia] [char](15) NULL,
+	[Descricao] [char](100) NULL,
+	[DescResumida] [char](40) NULL,
+	[Id_Grupo] [int] NULL,
+	[Ativo] [int] NULL,
+	[Tipo] [int] NULL,
+	[RefFornecedor] [char](15) NULL,
+	[CodBarra] [char](13) NULL,
+	[IcmsIss] [float] NULL,
+	[Reducao] [float] NULL,
+	[Ipi] [float] NULL,
+	[SitTributaria] [int] NULL,
+	[CodSefaz] [char](10) NULL,
+	[EstMinimo] [numeric](18, 3) NULL,
+	[EstMaximo] [numeric](18, 3) NULL,
+	[PesoBruto] [numeric](18, 3) NULL,
+	[PesoLiquido] [numeric](18, 3) NULL,
+	[Unidade] [char](5) NULL,
+	[PrcMinimo] [float] NULL,
+	[PrcVarejo] [float] NULL,
+	[PrcAtacado] [float] NULL,
+	[UltPrcCompra] [float] NULL,
+	[Custo] [float] NULL,
+	[DtCadastro] [datetime] NULL,
+	[DtUltCompra] [datetime] NULL,
+	[DtUltVenda] [datetime] NULL,
+	[Observacao] [text] NULL,
+	[Composicao] [text] NULL,
+	[SaldoEstoque] [numeric](18, 3) NULL,
+	[ProdutoKit] [int] NULL,
+	[ID_GENERO] [int] NULL,
+	[DtAlteracao] [datetime] NULL,
+	[EnviarEmail] [int] NULL,
+	[CreditoIPI] [int] NULL,
+	[ncm] [char](15) NULL,
+	[id_cfop_VF] [int] NULL,
+	[id_cfop_VD] [int] NULL,
+	[PrcEspecial] [float] NULL,
+	[QtdeCaixa] [int] NULL,
+	[QtdeCxDist] [int] NULL,
+ CONSTRAINT [PK_Produtos] PRIMARY KEY CLUSTERED 
+(
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [Descricao] ON [dbo].[Produtos] 
+(
+	[Descricao] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [Referencia] ON [dbo].[Produtos] 
+(
+	[Referencia] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Pessoas]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Pessoas](
+	[Id_Pessoa] [int] NOT NULL,
+	[RazaoSocial] [char](100) NULL,
+	[Fantasia] [char](100) NULL,
+	[Clie_Forn] [int] NULL,
+	[Cnpj] [char](20) NULL,
+	[Insc_UF] [char](15) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Numero] [char](10) NULL,
+	[Complemento] [char](20) NULL,
+	[Cidade] [char](30) NULL,
+	[Bairro] [char](30) NULL,
+	[Id_Uf] [int] NULL,
+	[Email] [char](200) NULL,
+	[Fone] [char](10) NULL,
+	[Fax] [char](10) NULL,
+	[Contato] [char](30) NULL,
+	[Celular] [char](10) NULL,
+	[Id_Filial] [int] NULL,
+	[Id_Custo] [int] NULL,
+	[Id_Departamento] [int] NULL,
+	[Id_Atividade] [int] NULL,
+	[Id_Transportadora] [int] NULL,
+	[Id_Cfop] [int] NULL,
+	[Id_Rota] [int] NULL,
+	[Id_Vendedor] [int] NULL,
+	[Ativo] [int] NULL,
+	[Tipo] [int] NULL,
+	[Id_FormaPgto] [int] NULL,
+	[Observacao] [text] NULL,
+	[Frete] [int] NULL,
+	[CepCobranca] [char](8) NULL,
+	[EndCobranca] [char](100) NULL,
+	[NumCobranca] [char](10) NULL,
+	[ComplCobranca] [char](20) NULL,
+	[BairroCobranca] [char](30) NULL,
+	[CidadeCobranca] [char](30) NULL,
+	[Id_UfCobranca] [int] NULL,
+	[LimiteCredito] [float] NULL,
+	[DataCadastro] [datetime] NULL,
+	[ComissaoFixa] [float] NULL,
+	[Credito] [float] NULL,
+	[BloqFormaPgto] [int] NULL,
+	[OBS_SERASA] [text] NULL,
+	[SENHA] [char](100) NULL,
+	[IdServidor] [int] NULL,
+	[MARGEMNEGOCIO] [int] NULL,
+	[PAIS] [char](5) NULL,
+	[EmailNFE] [char](200) NULL,
+	[ID_VINCULO] [int] NULL,
+	[NotificaAltPrc] [int] NULL,
+	[Obs_Entrega] [text] NULL,
+	[PRAZOPGTO] [char](100) NULL,
+	[PDescNFGrpTalimpo] [float] NULL,
+	[PDescNFGrpOutros] [float] NULL,
+ CONSTRAINT [PK_Fornecedores] PRIMARY KEY CLUSTERED 
+(
+	[Id_Pessoa] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [CNPJ] ON [dbo].[Pessoas] 
+(
+	[Cnpj] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [Fantasia] ON [dbo].[Pessoas] 
+(
+	[Fantasia] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [RazaoSocial] ON [dbo].[Pessoas] 
+(
+	[RazaoSocial] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PedCompraItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PedCompraItens](
+	[Id_Documento] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[Id_Produto] [int] NOT NULL,
+	[Qtde] [decimal](18, 3) NULL,
+	[QtdeRecebida] [decimal](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[PIpi] [float] NULL,
+	[PIcms] [float] NULL,
+ CONSTRAINT [PK_PedCompraItens] PRIMARY KEY CLUSTERED 
+(
+	[Id_Documento] ASC,
+	[Id_Item] ASC,
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdDocumento] ON [dbo].[PedCompraItens] 
+(
+	[Id_Documento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PedCompra]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PedCompra](
+	[Id_Documento] [int] NOT NULL,
+	[Id_Pessoa] [int] NULL,
+	[Data] [datetime] NULL,
+	[NumPedido] [char](15) NULL,
+	[Vendedor] [char](30) NULL,
+	[Fone] [char](10) NULL,
+	[PrevEntrega] [datetime] NULL,
+	[Id_Usuario] [int] NULL,
+	[DataRecebimento] [datetime] NULL,
+	[Observacao] [text] NULL,
+	[VlrTotal] [float] NULL,
+	[Status] [int] NULL,
+	[id_filial] [int] NULL,
+	[FormaPgto] [char](100) NULL,
+ CONSTRAINT [PK_PedCompra] PRIMARY KEY CLUSTERED 
+(
+	[Id_Documento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Parametros]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Parametros](
+	[Id_Filial] [int] NOT NULL,
+	[UsaTabComissao] [int] NULL,
+	[Comissao1] [float] NULL,
+	[Comissao2] [float] NULL,
+	[Comissao3] [float] NULL,
+	[Comissao4] [float] NULL,
+	[EstoqueZero] [int] NULL,
+	[ClienteAtraso] [int] NULL,
+	[LimiteCredito] [int] NULL,
+	[NotaFiscal] [int] NULL,
+	[Formulario] [int] NULL,
+	[NFE] [int] NULL,
+	[NotaIPI] [int] NULL,
+	[LinhasNota] [int] NULL,
+	[Id_Consumidor] [int] NULL,
+	[WS_ClienteAtraso] [int] NULL,
+	[NFE_AMBIENTE] [int] NULL,
+	[CERTIFICADO] [varchar](400) NULL,
+	[PERC_PIS] [float] NULL,
+	[PERC_COFINS] [float] NULL,
+	[NFE_VERSAO] [int] NULL,
+	[WS_CadPessoa] [int] NULL,
+	[NotaNFE] [int] NULL,
+	[FormularioNFE] [int] NULL,
+	[LOGOMARCA] [image] NULL,
+	[WSNumNFE] [int] NULL,
+	[SMTP] [char](100) NULL,
+	[PORTA] [int] NULL,
+	[EMAIL] [char](100) NULL,
+	[SENHA] [char](30) NULL,
+	[cli_diasinativo] [int] NULL,
+	[InssFaixa1] [float] NULL,
+	[InssPerc1] [float] NULL,
+	[InssFaixa2] [float] NULL,
+	[InssPerc2] [float] NULL,
+	[InssFaixa3] [float] NULL,
+	[InssPerc3] [float] NULL,
+	[release] [char](10) NULL,
+ CONSTRAINT [PK_Parametros] PRIMARY KEY CLUSTERED 
+(
+	[Id_Filial] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[NotaFiscalItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NotaFiscalItens](
+	[Id_Nota] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [decimal](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[PIpi] [float] NULL,
+	[VlrIpi] [float] NULL,
+	[PIcms] [float] NULL,
+	[VlrIcms] [float] NULL,
+	[PercRed] [float] NULL,
+	[PIcmsSub] [float] NULL,
+	[VlrIcmsSub] [float] NULL,
+	[SITTRIBUTARIA] [int] NULL,
+	[id_cfop] [int] NULL,
+ CONSTRAINT [PK_NotaFiscalItens] PRIMARY KEY CLUSTERED 
+(
+	[Id_Nota] ASC,
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdNota] ON [dbo].[NotaFiscalItens] 
+(
+	[Id_Nota] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NotaFiscal]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[NotaFiscal](
+	[Id_Nota] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[Id_Filial] [int] NULL,
+	[Id_Venda] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Cfop] [int] NULL,
+	[Id_Transportadora] [int] NULL,
+	[Frete] [int] NULL,
+	[EntSaida] [int] NULL,
+	[DtEmissao] [datetime] NULL,
+	[NumFormulario] [int] NULL,
+	[NumNota] [int] NULL,
+	[BIcms] [float] NULL,
+	[VlrIcms] [float] NULL,
+	[BIcmsSub] [float] NULL,
+	[VlrIcmsSub] [float] NULL,
+	[VlrFrete] [float] NULL,
+	[VlrSeguro] [float] NULL,
+	[VlrOutraDesp] [float] NULL,
+	[VlrIpi] [float] NULL,
+	[VlrProdutos] [float] NOT NULL,
+	[VlrNota] [float] NULL,
+	[VlrDesconto] [float] NULL,
+	[Observacao] [text] NULL,
+	[QtdeVolume] [int] NULL,
+	[Especie] [char](15) NULL,
+	[Marca] [char](15) NULL,
+	[PesoBruto] [decimal](18, 3) NULL,
+	[PesoLiquido] [decimal](18, 3) NULL,
+	[RazaoSocial] [char](100) NULL,
+	[CnpjCpf] [char](20) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Complemento] [char](20) NULL,
+	[Numero] [char](10) NULL,
+	[Insc_Uf] [char](20) NULL,
+	[Bairro] [char](30) NULL,
+	[Cidade] [char](30) NULL,
+	[Id_UF] [char](3) NULL,
+	[Telefone] [char](10) NULL,
+	[Status] [int] NULL,
+	[SeqImp] [int] NULL,
+	[DATACANCEL] [datetime] NULL,
+	[ChaveNFe] [char](50) NULL,
+	[ProtocoloNFe] [char](50) NULL,
+	[ReciboNFe] [char](50) NULL,
+	[ProtocoloCanc] [char](50) NULL,
+	[NFE] [int] NULL,
+	[PAIS] [char](5) NULL,
+	[VLRACRESCIMO] [float] NULL,
+ CONSTRAINT [PK_NotaFiscal] PRIMARY KEY CLUSTERED 
+(
+	[Id_Nota] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MvVendaItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvVendaItens](
+	[Id_Venda] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[TipoItem] [char](1) NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [numeric](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[P_Comissao] [float] NULL,
+	[VlrComissao] [float] NULL,
+	[VlrUntComissao] [float] NULL,
+	[VlrUntReal] [float] NULL,
+	[P_Desconto] [float] NULL,
+	[PrcCusto] [float] NULL,
+	[PrcMinimo] [float] NULL,
+	[PrcVarejo] [float] NULL,
+	[PrcAtacado] [float] NULL,
+	[Vinculado] [int] NULL,
+	[MARGEMNEGOCIO] [int] NULL,
+	[PrcEspecial] [float] NULL,
+	[id_promocao] [int] NULL,
+ CONSTRAINT [PK_MvVendaItens] PRIMARY KEY CLUSTERED 
+(
+	[Id_Venda] ASC,
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [IdVenda] ON [dbo].[MvVendaItens] 
+(
+	[Id_Venda] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MvVenda]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvVenda](
+	[Id_Venda] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[ImpNF] [int] NULL,
+	[Id_Caixa] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Filial] [int] NULL,
+	[Id_Vendedor] [int] NULL,
+	[Id_Usuario] [int] NULL,
+	[Id_Rota] [int] NULL,
+	[Id_FormaPgto] [int] NULL,
+	[TpVenda] [char](5) NULL,
+	[NumDocumento] [char](15) NULL,
+	[PrevEntrega] [datetime] NULL,
+	[Id_Entregador] [int] NULL,
+	[Observacao] [text] NULL,
+	[Status] [int] NULL,
+	[DataCancel] [datetime] NULL,
+	[VlrSubTotal] [float] NULL,
+	[VlrDesconto] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[Pessoa] [char](100) NULL,
+	[CNPJCPF] [char](20) NULL,
+	[InscUF] [char](20) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Numero] [char](10) NULL,
+	[Complemento] [char](20) NULL,
+	[Cidade] [char](30) NULL,
+	[Bairro] [char](30) NULL,
+	[Id_Uf] [int] NULL,
+	[Fone] [char](10) NULL,
+	[Id_VdMaster] [int] NULL,
+	[VinculoVd] [char](100) NULL,
+	[FormNF] [char](40) NULL,
+	[Id_UsuAutDeb] [int] NULL,
+	[DtAutDeb] [datetime] NULL,
+	[Credito] [float] NULL,
+	[Id_UltUsuario] [int] NULL,
+	[DataConfirmacao] [datetime] NULL,
+	[PrazoPgto] [char](20) NULL,
+	[Faturado] [int] NULL,
+	[Id_VdTroca] [int] NULL,
+	[VdBalcao] [int] NULL,
+	[id_vdmatriz] [int] NULL,
+	[SemMovEst] [int] NULL,
+	[FrenteLoja] [int] NULL,
+	[VlrLiberado] [float] NULL,
+	[PAIS] [char](5) NULL,
+	[ID_LancCF] [int] NULL,
+	[VdImpFat] [int] NULL,
+	[datacf] [datetime] NULL,
+	[cli_reativado] [int] NULL,
+ CONSTRAINT [PK_MvVendas] PRIMARY KEY CLUSTERED 
+(
+	[Id_Venda] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [MvVenda01] ON [dbo].[MvVenda] 
+(
+	[Id_Filial] ASC,
+	[Id_Vendedor] ASC,
+	[Status] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [MvVenda02] ON [dbo].[MvVenda] 
+(
+	[Id_Pessoa] ASC,
+	[TpVenda] ASC,
+	[Status] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MvFolhaPag]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvFolhaPag](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Func] [int] NOT NULL,
+	[MesAno] [char](10) NULL,
+	[Id_ProvDesc] [int] NULL,
+	[Valor] [float] NULL,
+	[Qtde_Ref] [float] NULL,
+	[Descricao] [char](30) NULL,
+ CONSTRAINT [PK_MvFolhaPag] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC,
+	[Id_Func] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MvEstoqueItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvEstoqueItens](
+	[Id_Item] [int] NOT NULL,
+	[Id_Mov] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [numeric](18, 3) NULL,
+	[VlrPrcCompra] [float] NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrSubTotal] [float] NULL,
+	[VlrDesconto] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[P_IPI] [float] NULL,
+	[VlrIPI] [float] NULL,
+	[P_ICMS] [float] NULL,
+	[VlrICMS] [float] NULL,
+	[PercRed] [float] NULL,
+	[VLRFRETE] [float] NULL,
+	[VLRICMS_SUB] [float] NULL,
+	[NCM] [char](15) NULL,
+	[id_promocao] [int] NULL,
+ CONSTRAINT [PK_MvEstoqueItens_1] PRIMARY KEY CLUSTERED 
+(
+	[Id_Item] ASC,
+	[Id_Mov] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [IdMov] ON [dbo].[MvEstoqueItens] 
+(
+	[Id_Mov] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MvEstoque]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvEstoque](
+	[Id_Mov] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[TPMov] [char](5) NULL,
+	[Id_PedCompra] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Documento] [char](20) NULL,
+	[NumDocumento] [char](20) NULL,
+	[NumFormulario] [char](20) NULL,
+	[ObsSelo] [text] NULL,
+	[Id_Filial] [int] NULL,
+	[Id_FilialOrigDest] [int] NULL,
+	[Id_FormaPgto] [int] NULL,
+	[Solicitante] [char](30) NULL,
+	[Autorizado] [char](30) NULL,
+	[DtEntSai] [datetime] NULL,
+	[TpFrete] [int] NULL,
+	[ID_Cfop] [int] NULL,
+	[VlrSubTotal] [float] NULL,
+	[VlrDesconto] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[B_Icms] [float] NULL,
+	[VlrIcms] [float] NULL,
+	[B_IcmsSub] [float] NULL,
+	[VlrIcmsSub] [float] NULL,
+	[VlrFrete] [float] NULL,
+	[VlrSeguro] [float] NULL,
+	[VlrOutrasDesp] [float] NULL,
+	[VlrIpi] [float] NULL,
+	[Observacao] [text] NULL,
+	[Status] [int] NULL,
+	[DtEmissao] [datetime] NULL,
+	[TipoPgto] [int] NULL,
+	[ChaveNFE] [char](50) NULL,
+	[OutrosIPI] [float] NULL,
+	[Conferido] [int] NULL,
+	[Id_MovChave] [int] NULL,
+	[NtServico] [int] NULL,
+ CONSTRAINT [PK_MvEstoque] PRIMARY KEY CLUSTERED 
+(
+	[Id_Mov] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [TpMvStatus] ON [dbo].[MvEstoque] 
+(
+	[TPMov] ASC,
+	[Status] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MvContaCaixa]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvContaCaixa](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Caixa] [int] NULL,
+	[Data] [datetime] NULL,
+	[Id_Documento] [int] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Descricao] [char](100) NULL,
+	[TpLanc] [int] NULL,
+	[Valor] [float] NULL,
+	[Id_LancOrig] [int] NULL,
+	[Observacao] [text] NULL,
+	[Id_Usuario] [int] NULL,
+	[Id_CaixaDest] [int] NULL,
+	[status] [int] NULL,
+	[Id_TpDocDest] [int] NULL,
+	[id_agente] [int] NULL,
+ CONSTRAINT [PK_MvContaCaixa] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MvCaixaBalcao]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MvCaixaBalcao](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Caixa] [int] NULL,
+	[Tipo] [int] NULL,
+	[Descricao] [char](100) NULL,
+	[Valor] [float] NULL,
+	[Id_Documento] [int] NULL,
+	[Status] [int] NULL,
+ CONSTRAINT [PK_MvCaixaBalcao] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MovChequePre]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MovChequePre](
+	[Id_Lanc] [int] NOT NULL,
+	[DataLanc] [datetime] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Titular] [char](60) NULL,
+	[NumBanco] [int] NULL,
+	[NumAgencia] [int] NULL,
+	[NumConta] [char](10) NULL,
+	[NumCheque] [char](10) NULL,
+	[DtVencimento] [datetime] NULL,
+	[Valor] [float] NULL,
+	[Observacao] [text] NULL,
+	[Id_PessoaDest] [int] NULL,
+	[DtDestino] [datetime] NULL,
+	[Status] [int] NULL,
+	[DocumVenda] [char](10) NULL,
+	[id_filial] [int] NULL,
+	[CNPJCPF] [char](20) NULL,
+ CONSTRAINT [PK_MovChequePre] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [IdPessoaSta] ON [dbo].[MovChequePre] 
+(
+	[Id_Pessoa] ASC,
+	[Status] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdPessoaVenc] ON [dbo].[MovChequePre] 
+(
+	[Id_Pessoa] ASC,
+	[DtVencimento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LiberacaoProduto]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LiberacaoProduto](
+	[Id_Venda] [int] NOT NULL,
+	[Id_Produto] [int] NOT NULL,
+	[Id_Usuario] [int] NULL,
+	[Data] [datetime] NULL,
+ CONSTRAINT [PK_LiberacaoProduto] PRIMARY KEY CLUSTERED 
+(
+	[Id_Venda] ASC,
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LancFinanceiro]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[LancFinanceiro](
+	[Id_Lanc] [int] NULL,
+	[DataLanc] [datetime] NULL,
+	[PagRec] [int] NULL,
+	[Id_Mov] [int] NULL,
+	[Id_Venda] [int] NULL,
+	[TpMov] [char](5) NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Filial] [int] NULL,
+	[Id_TipoDocumento] [int] NULL,
+	[Id_Custo] [int] NULL,
+	[Id_Departamento] [int] NULL,
+	[Id_Vendedor] [int] NULL,
+	[Id_FormaPgto] [int] NULL,
+	[Id_Banco] [int] NULL,
+	[Id_Caixa] [int] NULL,
+	[NumDocumento] [char](25) NULL,
+	[NotaFiscal] [char](40) NULL,
+	[Referente] [char](40) NULL,
+	[Vencimento] [datetime] NULL,
+	[VlrOriginal] [float] NULL,
+	[VlrAtual] [nchar](10) NULL,
+	[DtBaixa] [datetime] NULL,
+	[VlrJuro] [float] NULL,
+	[VlrMulta] [float] NULL,
+	[VlrDesconto] [float] NULL,
+	[VlrBaixa] [float] NULL,
+	[Observacao] [text] NULL,
+	[Status] [int] NULL,
+	[Id_LancOrigem] [int] NULL,
+	[CodBarraBoleto] [char](60) NULL,
+	[LinhaBoleto] [char](60) NULL,
+	[NossoNumero] [char](30) NULL,
+	[ID_USULANC] [int] NULL,
+	[ID_USUBAIXA] [int] NULL,
+	[Id_Agente] [int] NULL,
+	[Id_CaixaPgto] [int] NULL,
+	[IDLANCSERV] [int] NULL,
+	[INATIVA] [int] NULL,
+	[DocRec] [int] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE UNIQUE CLUSTERED INDEX [PK_IdLanx] ON [dbo].[LancFinanceiro] 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdPessoaSta] ON [dbo].[LancFinanceiro] 
+(
+	[Id_Pessoa] ASC,
+	[Status] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdPessoaVenc] ON [dbo].[LancFinanceiro] 
+(
+	[Id_Pessoa] ASC,
+	[Vencimento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IdVenda] ON [dbo].[LancFinanceiro] 
+(
+	[Id_Venda] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[GrupoProduto]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[GrupoProduto](
+	[Id_Grupo] [int] NOT NULL,
+	[Grupo] [char](40) NULL,
+	[CST_DIEF] [int] NULL,
+	[CST_SPED] [int] NULL,
+	[LISTAWEB] [int] NULL,
+	[LISTAESTMIN] [int] NULL,
+	[ListaVenda] [int] NULL,
+ CONSTRAINT [PK_GrupoProduto] PRIMARY KEY CLUSTERED 
+(
+	[Id_Grupo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[GrupoCCusto]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[GrupoCCusto](
+	[Id_GrpCusto] [int] NOT NULL,
+	[Grupo] [char](50) NULL,
+	[Tipo] [int] NULL,
+ CONSTRAINT [PK_GrupoCCusto] PRIMARY KEY CLUSTERED 
+(
+	[Id_GrpCusto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[GeneroProduto]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[GeneroProduto](
+	[Id_Genero] [int] NOT NULL,
+	[Genero] [char](200) NULL,
+ CONSTRAINT [PK_GeneroProduto] PRIMARY KEY CLUSTERED 
+(
+	[Id_Genero] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Funcionarios]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Funcionarios](
+	[Id_Func] [int] NOT NULL,
+	[Matricula] [int] NULL,
+	[Nome] [char](80) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Numero] [char](10) NULL,
+	[Complemento] [char](20) NULL,
+	[Bairro] [char](30) NULL,
+	[Cidade] [char](30) NULL,
+	[Id_UF] [int] NULL,
+	[Telefone] [char](10) NULL,
+	[Celular] [char](10) NULL,
+	[DtNascim] [datetime] NULL,
+	[RG] [char](20) NULL,
+	[DtEmissao] [datetime] NULL,
+	[NomePai] [char](80) NULL,
+	[NomeMae] [char](80) NULL,
+	[CPF] [char](20) NULL,
+	[Ctps] [char](10) NULL,
+	[Serie] [char](10) NULL,
+	[TituloEleitoral] [char](15) NULL,
+	[RefPessoal] [char](60) NULL,
+	[RefTelefone] [char](10) NULL,
+	[Parentesco] [char](20) NULL,
+	[TipoConta] [int] NULL,
+	[Banco] [char](20) NULL,
+	[Agencia] [char](15) NULL,
+	[Conta] [char](15) NULL,
+	[DtAdmissao] [datetime] NULL,
+	[SalarioInicial] [float] NULL,
+	[SalarioAtual] [float] NULL,
+	[DtUltFerias] [datetime] NULL,
+	[Funcao] [char](30) NULL,
+	[CBO] [char](10) NULL,
+	[ObsAdvertencia] [text] NULL,
+	[ObsAltSalario] [text] NULL,
+	[ObsOutras] [text] NULL,
+	[DtDemissao] [datetime] NULL,
+	[Dependentes] [int] NULL,
+	[PlanoSaude] [int] NULL,
+	[ContratoExp] [int] NULL,
+	[Id_Departamento] [int] NULL,
+	[Id_FilialTrab] [int] NULL,
+	[Id_FilialReg] [int] NULL,
+	[Escolaridade] [int] NULL,
+	[EstadoCivil] [int] NULL,
+	[CNH] [char](20) NULL,
+	[PIS] [char](20) NULL,
+	[Email] [char](150) NULL,
+	[salarioCtps] [float] NULL,
+	[ID_VENDEDOR] [int] NULL,
+	[Demissao] [int] NULL,
+	[MotivoDemissao] [text] NULL,
+	[AdiantSalario] [float] NULL,
+ CONSTRAINT [PK_Funcionarios] PRIMARY KEY CLUSTERED 
+(
+	[Id_Func] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[FormaPagamento]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[FormaPagamento](
+	[Id_FormaPgto] [int] NOT NULL,
+	[FormaPgto] [char](40) NULL,
+	[NumParcelas] [int] NULL,
+	[PrimParcela] [int] NULL,
+	[Intervalo] [int] NULL,
+	[Financeiro] [int] NULL,
+	[Baixa] [int] NULL,
+	[Desconto] [float] NULL,
+	[Id_TipoDocumento] [int] NULL,
+	[IDSERVIDOR] [int] NULL,
+ CONSTRAINT [PK_FormaPagamento] PRIMARY KEY CLUSTERED 
+(
+	[Id_FormaPgto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ExtratoEstoque]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ExtratoEstoque](
+	[Id_Lanc] [int] NOT NULL,
+	[DtMovim] [datetime] NULL,
+	[TpMov] [char](5) NULL,
+	[Id_Item] [int] NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [decimal](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[Data] [datetime] NULL,
+ CONSTRAINT [PK_ExtratoEstoque] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [IdItem] ON [dbo].[ExtratoEstoque] 
+(
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [TpMovItem] ON [dbo].[ExtratoEstoque] 
+(
+	[TpMov] ASC,
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = OFF) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Estados]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Estados](
+	[Id_Uf] [int] NOT NULL,
+	[Sigla] [char](2) NULL,
+	[Estado] [char](60) NULL,
+	[IcmsEntrada] [float] NULL,
+	[IcmsSaida] [float] NULL,
+	[CodIBGE] [int] NULL,
+ CONSTRAINT [PK_Estados] PRIMARY KEY CLUSTERED 
+(
+	[Id_Uf] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Entregadores]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Entregadores](
+	[Id_Entregador] [int] NOT NULL,
+	[Entregador] [char](60) NULL,
+	[Telefone] [char](10) NULL,
+	[Celular] [char](10) NULL,
+ CONSTRAINT [PK_Entregadores] PRIMARY KEY CLUSTERED 
+(
+	[Id_Entregador] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Empresa_Filial]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Empresa_Filial](
+	[Id_Filial] [int] NOT NULL,
+	[Filial] [char](100) NULL,
+	[Fantasia] [char](100) NULL,
+	[Cnpj] [char](20) NULL,
+	[Insc_UF] [char](15) NULL,
+	[Cep] [char](8) NULL,
+	[Endereco] [char](100) NULL,
+	[Numero] [char](10) NULL,
+	[Complemento] [char](20) NULL,
+	[Bairro] [char](30) NULL,
+	[Cidade] [char](30) NULL,
+	[Id_Uf] [int] NULL,
+	[Fone1] [char](10) NULL,
+	[Fone2] [char](10) NULL,
+	[Fax] [char](10) NULL,
+	[Email] [char](200) NULL,
+	[Convenio] [char](10) NULL,
+	[Multa] [float] NULL,
+	[Juros] [float] NULL,
+	[Instrucao] [text] NULL,
+	[Id_Banco] [int] NULL,
+	[regime] [int] NULL,
+	[SERVIDORREMOTO] [char](100) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Departamentos]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Departamentos](
+	[Id_Departamento] [int] NOT NULL,
+	[Departamento] [char](60) NULL,
+	[Responsavel] [char](30) NULL,
+	[Ramal] [int] NULL,
+ CONSTRAINT [PK_Departamentos] PRIMARY KEY CLUSTERED 
+(
+	[Id_Departamento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[CupomFiscalItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CupomFiscalItens](
+	[Id_Lanc] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[Id_Produto] [int] NULL,
+	[Qtde] [decimal](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[Vlr_BIcms] [float] NULL,
+	[P_Icms] [float] NULL,
+	[VlrIcms] [float] NULL,
+	[VlrIsento] [float] NULL,
+	[VlrSubstituicao] [float] NULL,
+	[VlrNaoTributado] [float] NULL,
+	[SitTributaria] [int] NULL,
+ CONSTRAINT [PK_CupomFiscalItens] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC,
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CupomFiscal]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CupomFiscal](
+	[Id_Lanc] [int] NOT NULL,
+	[Num_CF] [int] NULL,
+	[Data] [datetime] NULL,
+	[Id_Venda] [int] NULL,
+	[VlrTotal] [float] NULL,
+	[Status] [int] NULL,
+	[VlrSubTotal] [float] NULL,
+	[VlrDesconto] [float] NULL,
+ CONSTRAINT [PK_CupomFiscal] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CotacaoPessoas]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CotacaoPessoas](
+	[Id_Cotacao] [int] NOT NULL,
+	[Id_Pessoa] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[VlrUnitario] [float] NULL,
+ CONSTRAINT [PK_ItemCotacaoPessoa] PRIMARY KEY CLUSTERED 
+(
+	[Id_Cotacao] ASC,
+	[Id_Pessoa] ASC,
+	[Id_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CotacaoItens]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CotacaoItens](
+	[Id_Cotacao] [int] NOT NULL,
+	[Id_Item] [int] NOT NULL,
+	[Id_Produto] [int] NOT NULL,
+	[Qtde] [numeric](18, 3) NULL,
+	[VlrUnitario] [float] NULL,
+	[VlrTotal] [float] NULL,
+	[Id_Pessoa] [int] NULL,
+ CONSTRAINT [PK_ItemCotacao] PRIMARY KEY CLUSTERED 
+(
+	[Id_Cotacao] ASC,
+	[Id_Item] ASC,
+	[Id_Produto] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cotacao]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Cotacao](
+	[Id_Cotacao] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[Tipo] [int] NULL,
+	[Documento] [char](15) NULL,
+	[Responsavel] [char](40) NULL,
+	[Observacao] [text] NULL,
+	[VlrTotal] [float] NULL,
+	[NItens] [int] NULL,
+	[Status] [int] NULL,
+	[DataConclusao] [datetime] NULL,
+	[Concluido] [int] NULL,
+ CONSTRAINT [PK_Cotacao_Compra] PRIMARY KEY CLUSTERED 
+(
+	[Id_Cotacao] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ControleInstalacao]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ControleInstalacao](
+	[Id_Lanc] [int] NOT NULL,
+	[Data] [datetime] NULL,
+	[Id_Pessoa] [int] NULL,
+	[Id_Venda] [int] NULL,
+	[Id_Vendedor] [int] NULL,
+	[Servico] [char](100) NULL,
+	[DtPrevista] [datetime] NULL,
+	[Observacao] [text] NULL,
+	[DtConcluido] [datetime] NULL,
+	[Status] [int] NULL,
+	[Endereco] [char](80) NULL,
+	[Contato] [char](30) NULL,
+	[Telefone] [char](10) NULL,
+	[QTDEEQUIP] [int] NULL,
+ CONSTRAINT [PK_ControleInstalacao] PRIMARY KEY CLUSTERED 
+(
+	[Id_Lanc] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ContaCaixa]    Script Date: 12/21/2012 11:09:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ContaCaixa](
+	[Id_Caixa] [int] NOT NULL,
+	[Caixa] [char](40) NULL,
+ CONSTRAINT [PK_ContaCaixa] PRIMARY KEY CLUSTERED 
+(
+	[Id_Caixa] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  StoredProcedure [dbo].[ConsultaSaldoEstoque]    Script Date: 12/21/2012 11:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[ConsultaSaldoEstoque](@Ref char(15)) 	
+AS
+BEGIN
+	SET NOCOUNT ON;
+    -- Insert statements for procedure here
+   SELECT CASE T1.PRODUTOKIT WHEN 0 THEN T1.SaldoEstoque  ELSE (SELECT MIN(KT2.SALDOESTOQUE) FROM PRODUTOSKIT KT1
+       LEFT JOIN PRODUTOS KT2 ON (KT2.ID_PRODUTO=KT1.ID_PRODUTO)  WHERE KT1.ID_PRDMASTER=T1.ID_PRODUTO) END AS SALDOESTOQUE  
+    FROM Produtos T1 WHERE T1.Referencia=@ref
+	--SELECT SaldoEstoque From Produtos Where Referencia=@ref
+END
+GO
+/****** Object:  StoredProcedure [dbo].[ProximoID]    Script Date: 12/21/2012 11:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		LUCIO JULIANO
+-- Create date: 09/05/2011
+-- Description:	RETORNAR O NUMERO DO PROXIMO ID DA TABELA
+-- =============================================
+CREATE PROCEDURE [dbo].[ProximoID](@NomeTab char(20), @Ret int output)
+AS
+  DECLARE @NumID int;
+BEGIN	
+	SET NOCOUNT ON;
+    SET @Ret=0;    
+    
+	if (Exists (SELECT * FROM TABELAID WHERE RTRIM(TABELA)=RTRIM(@NomeTab)))
+        UPDATE TABELAID SET ID=ID+1 WHERE RTRIM(TABELA)=RTRIM(@NomeTab);
+    ELSE
+        INSERT INTO TABELAID (TABELA,ID) VALUES (RTRIM(@NomeTab),1);
+    SET @Ret=(SELECT ISNULL(ID,0) FROM TABELAID WHERE RTRIM(TABELA)=RTRIM(@NomeTab))    
+END
+RETURN @Ret
+
+
+SET ANSI_NULLS ON
+GO
+/****** Object:  StoredProcedure [dbo].[VerificarCreditoCliente]    Script Date: 12/21/2012 11:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[VerificarCreditoCliente](@Cnpj char(20),@Ret int output)
+AS
+declare @IdPessoa int;
+BEGIN
+    Set @Ret=0
+	Set @IdPessoa = (SELECT ID_PESSOA FROM PESSOAS WHERE CNPJ=@Cnpj)
+    if (@IdPessoa > 0)
+      begin
+         Set @IdPessoa = (SELECT ID_PESSOA FROM LANCFINANCEIRO WHERE ID_PESSOA=@IdPessoa AND VENCIMENTO < Convert(DateTime,GetDate(),103) AND STATUS=0
+                          UNION SELECT ID_PESSOA FROM MOVCHEQUEPRE WHERE ID_PESSOA=@IdPessoa AND STATUS=1);
+      end
+    Set @Ret = @IdPessoa    
+END
+return @Ret
+GO
+/****** Object:  StoredProcedure [dbo].[Atlz_SaldoEstoque]    Script Date: 12/21/2012 11:09:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Lucio Juliano
+-- Create date: 09/05/2011
+-- Description:	Atualizar a tabela de saldo do estoque
+-- =============================================
+CREATE PROCEDURE [dbo].[Atlz_SaldoEstoque](@Mov Char(1),@OpMov Char(1),@IdPrd int, @Data DateTime, @Qtde decimal(18,3))	
+AS
+ DECLARE @SALDOANTERIOR decimal(18,3);
+ DECLARE @IDLANC INT;
+ DECLARE @T_ENT DECIMAL(18,3);
+ DECLARE @T_SAI DECIMAL(18,3);
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+    SET @SALDOANTERIOR = 0;
+    -- Verificando o Saldo Anterior
+    SET @SALDOANTERIOR = (SELECT TOP 1 ISNULL(SALDO,0) FROM SALDOESTOQUE  WHERE ID_PRODUTO=@IdPrd AND DATA < @DATA ORDER BY DATA DESC)
+
+    --Atualizando o saldo do estoque na data    
+
+    Set @IDLANC = (SELECT ID_LANC FROM SALDOESTOQUE WHERE ID_PRODUTO=@IdPrd AND DATA=@Data)
+    SET @SALDOANTERIOR  = ISNULL(@SALDOANTERIOR,0);
+
+    IF (@IDLANC > 0)
+      BEGIN
+        IF (RTRIM(@Mov)='E')
+          BEGIN
+            IF (RTRIM(@OpMov)='I')
+               --UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,ENTRADAS=ENTRADAS+@QTDE,SALDO=SALDO+@QTDE  WHERE ID_LANC=@IDLANC
+                   UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,ENTRADAS=ENTRADAS+@QTDE,SALDO=SALDO+@QTDE  WHERE ID_LANC=@IDLANC
+            ELSE
+               UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,ENTRADAS=ENTRADAS-@QTDE,SALDO=SALDO-@QTDE  WHERE ID_LANC=@IDLANC                   
+          END
+        ELSE
+          BEGIN
+            IF (RTRIM(@OpMov)='I')
+               UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,SAIDAS=SAIDAS+@QTDE,SALDO=SALDO-@QTDE  WHERE ID_LANC=@IDLANC
+            ELSE
+               UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,SAIDAS=SAIDAS-@QTDE,SALDO=SALDO+@QTDE  WHERE ID_LANC=@IDLANC                   
+          END   
+      END	
+    ELSE
+      BEGIN
+        EXEC PROXIMOID 'SALDOESTOQUE',@IDLANC OUTPUT;
+
+        IF (RTRIM(@Mov)='E')
+          BEGIN
+            IF (RTRIM(@OpMov)='I')
+               INSERT INTO SALDOESTOQUE (ID_LANC,ID_PRODUTO,DATA,SLDANTERIOR,ENTRADAS,SAIDAS,SALDO) VALUES (@IDLANC,@IDPRD,@DATA,ISNULL(@SALDOANTERIOR,0),@QTDE ,0,@SALDOANTERIOR + @QTDE);
+            ELSE
+               INSERT INTO SALDOESTOQUE (ID_LANC,ID_PRODUTO,DATA,SLDANTERIOR,ENTRADAS,SAIDAS,SALDO) VALUES (@IDLANC,@IDPRD,@DATA,ISNULL(@SALDOANTERIOR,0),-1 * @QTDE ,0,@SALDOANTERIOR - @QTDE);
+          END
+        ELSE
+          BEGIN
+            IF (RTRIM(@OpMov)='I')
+               INSERT INTO SALDOESTOQUE (ID_LANC,ID_PRODUTO,DATA,SLDANTERIOR,ENTRADAS,SAIDAS,SALDO) VALUES (@IDLANC,@IDPRD,@DATA,ISNULL(@SALDOANTERIOR,0),0, @QTDE, @SALDOANTERIOR + (-1*@QTDE));
+            ELSE
+               INSERT INTO SALDOESTOQUE (ID_LANC,ID_PRODUTO,DATA,SLDANTERIOR,ENTRADAS,SAIDAS,SALDO) VALUES (@IDLANC,@IDPRD,@DATA,ISNULL(@SALDOANTERIOR,0),0, -1 * @QTDE , @SALDOANTERIOR + @QTDE);
+          END   
+      END	
+  
+    -- Atualizando o Saldo
+    SET @SALDOANTERIOR = 0;
+    SET @SALDOANTERIOR = (SELECT TOP 1 ISNULL(SALDO,0) FROM SALDOESTOQUE  WHERE ID_PRODUTO=@IdPrd AND DATA <= @DATA ORDER BY DATA DESC)
+    
+    DECLARE TABSALDO CURSOR FOR SELECT ISNULL(ID_LANC,0),ISNULL(ENTRADAS,0),ISNULL(SAIDAS,0) FROM SALDOESTOQUE WHERE ID_PRODUTO = @IDPRD AND DATA > @DATA ORDER BY DATA
+    OPEN TABSALDO;
+    FETCH NEXT FROM TABSALDO INTO @IDLANC,@T_ENT,@T_SAI;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+      UPDATE SALDOESTOQUE SET SLDANTERIOR=@SALDOANTERIOR,SALDO=@SALDOANTERIOR+(ENTRADAS-SAIDAS) WHERE ID_LANC=@IDLANC;
+      SET @SALDOANTERIOR=@SALDOANTERIOR+(@T_ENT-@T_SAI);
+      FETCH NEXT FROM TABSALDO INTO @IDLANC,@T_ENT,@T_SAI;
+    END;
+    CLOSE TABSALDO;
+    DEALLOCATE TABSALDO;
+    UPDATE PRODUTOS SET SALDOESTOQUE=@SALDOANTERIOR WHERE ID_PRODUTO=@IDPRD;
+END
+GO

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UltimaCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CNPJCPF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UltimaCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UltimaCompraResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UltimoOrcamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CNPJCPF" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdServidor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UltimoOrcamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UltimoOrcamentoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UltimaCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:UltimaCompra" />
+  </wsdl:message>
+  <wsdl:message name="UltimaCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:UltimaCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="UltimoOrcamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:UltimoOrcamento" />
+  </wsdl:message>
+  <wsdl:message name="UltimoOrcamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:UltimoOrcamentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UltCompraClienteSoap">
+    <wsdl:operation name="UltimaCompra">
+      <wsdl:input message="tns:UltimaCompraSoapIn" />
+      <wsdl:output message="tns:UltimaCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UltimoOrcamento">
+      <wsdl:input message="tns:UltimoOrcamentoSoapIn" />
+      <wsdl:output message="tns:UltimoOrcamentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UltCompraClienteSoap" type="tns:UltCompraClienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UltimaCompra">
+      <soap:operation soapAction="http://tempuri.org/UltimaCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UltimoOrcamento">
+      <soap:operation soapAction="http://tempuri.org/UltimoOrcamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UltCompraClienteSoap12" type="tns:UltCompraClienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UltimaCompra">
+      <soap12:operation soapAction="http://tempuri.org/UltimaCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UltimoOrcamento">
+      <soap12:operation soapAction="http://tempuri.org/UltimoOrcamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UltCompraCliente">
+    <wsdl:port name="UltCompraClienteSoap" binding="tns:UltCompraClienteSoap">
+      <soap:address location="http://177.19.133.130/ERP-SGE_WebService/UltCompraCliente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UltCompraClienteSoap12" binding="tns:UltCompraClienteSoap12">
+      <soap12:address location="http://177.19.133.130/ERP-SGE_WebService/UltCompraCliente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

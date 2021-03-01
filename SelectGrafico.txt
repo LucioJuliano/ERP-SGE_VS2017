@@ -1,0 +1,12 @@
+select T2.ID_VENDEDOR,T3.Vendedor,sum(t1.vlruntreal*t1.qtde) as '2010',
+( SELECT ISNULL(sum(A1.vlruntreal*A1.qtde),0) FROM MVVENDAITENS A1
+  LEFT JOIN MVVENDA A2 ON (A2.ID_VENDA=A1.ID_VENDA)
+  where year(a2.preventrega)=2009 and month(A2.preventrega)=12 and A2.status=3
+  and A2.TpVenda='PV' AND A2.ID_VENDEDOR=T2.ID_VENDEDOR
+) as '2009'
+ from mvvendaitens t1
+left join mvvenda t2 on (t2.id_venda=t1.id_venda)
+left join vendedores t3 on (t3.id_vendedor=t2.id_vendedor)
+where year(t2.preventrega)=2010 and month(t2.preventrega)=12 and t2.status=3 --and t2.id_vendedor=4
+  and t2.TpVenda='PV'
+Group by T2.ID_VENDEDOR,T3.Vendedor

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabRelCotacao" targetNamespace="http://tempuri.org/RelCotacao.xsd" xmlns:mstns="http://tempuri.org/RelCotacao.xsd" xmlns="http://tempuri.org/RelCotacao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Com_RelCotacao" GeneratorDataComponentClassName="Com_RelCotacao" Name="Tab_RelCotacao" UserDataComponentName="Com_RelCotacao">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        T1.Id_Cotacao, T1.Data, T1.Tipo, T1.Documento, T1.Responsavel, T1.Observacao, T1.VlrTotal, T1.NItens, T1.Status, T1.DataConclusao, T1.Concluido, 
+                         CASE T1.TIPO WHEN 0 THEN 'Menor Preço' WHEN 1 THEN 'Total Cotação' END AS TipoCotacao, T2.Id_Item, T2.Id_Produto, T2.Qtde, T2.VlrUnitario, 
+                         T2.VlrTotal AS TOTALITEM, T3.Referencia, T3.Descricao, T2.Id_Pessoa, T4.RazaoSocial
+FROM            Cotacao AS T1 LEFT OUTER JOIN
+                         CotacaoItens AS T2 ON T2.Id_Cotacao = T1.Id_Cotacao LEFT OUTER JOIN
+                         Produtos AS T3 ON T3.Id_Produto = T2.Id_Produto LEFT OUTER JOIN
+                         Pessoas AS T4 ON T4.Id_Pessoa = T2.Id_Pessoa
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Cotacao" DataSetColumn="Id_Cotacao" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Documento" DataSetColumn="Documento" />
+              <Mapping SourceColumn="Responsavel" DataSetColumn="Responsavel" />
+              <Mapping SourceColumn="Observacao" DataSetColumn="Observacao" />
+              <Mapping SourceColumn="VlrTotal" DataSetColumn="VlrTotal" />
+              <Mapping SourceColumn="NItens" DataSetColumn="NItens" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="DataConclusao" DataSetColumn="DataConclusao" />
+              <Mapping SourceColumn="Concluido" DataSetColumn="Concluido" />
+              <Mapping SourceColumn="TipoCotacao" DataSetColumn="TipoCotacao" />
+              <Mapping SourceColumn="Id_Item" DataSetColumn="Id_Item" />
+              <Mapping SourceColumn="Id_Produto" DataSetColumn="Id_Produto" />
+              <Mapping SourceColumn="Qtde" DataSetColumn="Qtde" />
+              <Mapping SourceColumn="VlrUnitario" DataSetColumn="VlrUnitario" />
+              <Mapping SourceColumn="TOTALITEM" DataSetColumn="TOTALITEM" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="Id_Pessoa" DataSetColumn="Id_Pessoa" />
+              <Mapping SourceColumn="RazaoSocial" DataSetColumn="RazaoSocial" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabRelCotacao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="TabRelCotacao" msprop:GeneratorDataSetName="TabRelCotacao" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tab_RelCotacao" msprop:Generator_UserTableName="Tab_RelCotacao" msprop:Generator_RowDeletedName="Tab_RelCotacaoRowDeleted" msprop:Generator_RowChangedName="Tab_RelCotacaoRowChanged" msprop:Generator_RowClassName="Tab_RelCotacaoRow" msprop:Generator_RowChangingName="Tab_RelCotacaoRowChanging" msprop:Generator_RowEvArgName="Tab_RelCotacaoRowChangeEvent" msprop:Generator_RowEvHandlerName="Tab_RelCotacaoRowChangeEventHandler" msprop:Generator_TableClassName="Tab_RelCotacaoDataTable" msprop:Generator_TableVarName="tableTab_RelCotacao" msprop:Generator_RowDeletingName="Tab_RelCotacaoRowDeleting" msprop:Generator_TablePropName="Tab_RelCotacao">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Cotacao" msprop:Generator_UserColumnName="Id_Cotacao" msprop:Generator_ColumnVarNameInTable="columnId_Cotacao" msprop:Generator_ColumnPropNameInRow="Id_Cotacao" msprop:Generator_ColumnPropNameInTable="Id_CotacaoColumn" type="xs:int" />
+              <xs:element name="Data" msprop:Generator_UserColumnName="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Documento" msprop:Generator_UserColumnName="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Responsavel" msprop:Generator_UserColumnName="Responsavel" msprop:Generator_ColumnVarNameInTable="columnResponsavel" msprop:Generator_ColumnPropNameInRow="Responsavel" msprop:Generator_ColumnPropNameInTable="ResponsavelColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacao" msprop:Generator_UserColumnName="Observacao" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VlrTotal" msprop:Generator_UserColumnName="VlrTotal" msprop:Generator_ColumnVarNameInTable="columnVlrTotal" msprop:Generator_ColumnPropNameInRow="VlrTotal" msprop:Generator_ColumnPropNameInTable="VlrTotalColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="NItens" msprop:Generator_UserColumnName="NItens" msprop:Generator_ColumnVarNameInTable="columnNItens" msprop:Generator_ColumnPropNameInRow="NItens" msprop:Generator_ColumnPropNameInTable="NItensColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DataConclusao" msprop:Generator_UserColumnName="DataConclusao" msprop:Generator_ColumnVarNameInTable="columnDataConclusao" msprop:Generator_ColumnPropNameInRow="DataConclusao" msprop:Generator_ColumnPropNameInTable="DataConclusaoColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Concluido" msprop:Generator_UserColumnName="Concluido" msprop:Generator_ColumnVarNameInTable="columnConcluido" msprop:Generator_ColumnPropNameInRow="Concluido" msprop:Generator_ColumnPropNameInTable="ConcluidoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoCotacao" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TipoCotacao" msprop:Generator_ColumnVarNameInTable="columnTipoCotacao" msprop:Generator_ColumnPropNameInRow="TipoCotacao" msprop:Generator_ColumnPropNameInTable="TipoCotacaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Item" msprop:Generator_UserColumnName="Id_Item" msprop:Generator_ColumnVarNameInTable="columnId_Item" msprop:Generator_ColumnPropNameInRow="Id_Item" msprop:Generator_ColumnPropNameInTable="Id_ItemColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_Produto" msprop:Generator_UserColumnName="Id_Produto" msprop:Generator_ColumnVarNameInTable="columnId_Produto" msprop:Generator_ColumnPropNameInRow="Id_Produto" msprop:Generator_ColumnPropNameInTable="Id_ProdutoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Qtde" msprop:Generator_UserColumnName="Qtde" msprop:Generator_ColumnVarNameInTable="columnQtde" msprop:Generator_ColumnPropNameInRow="Qtde" msprop:Generator_ColumnPropNameInTable="QtdeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VlrUnitario" msprop:Generator_UserColumnName="VlrUnitario" msprop:Generator_ColumnVarNameInTable="columnVlrUnitario" msprop:Generator_ColumnPropNameInRow="VlrUnitario" msprop:Generator_ColumnPropNameInTable="VlrUnitarioColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALITEM" msprop:Generator_UserColumnName="TOTALITEM" msprop:Generator_ColumnVarNameInTable="columnTOTALITEM" msprop:Generator_ColumnPropNameInRow="TOTALITEM" msprop:Generator_ColumnPropNameInTable="TOTALITEMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_UserColumnName="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_UserColumnName="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Pessoa" msprop:Generator_UserColumnName="Id_Pessoa" msprop:Generator_ColumnVarNameInTable="columnId_Pessoa" msprop:Generator_ColumnPropNameInRow="Id_Pessoa" msprop:Generator_ColumnPropNameInTable="Id_PessoaColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RazaoSocial" msprop:Generator_UserColumnName="RazaoSocial" msprop:Generator_ColumnVarNameInTable="columnRazaoSocial" msprop:Generator_ColumnPropNameInRow="RazaoSocial" msprop:Generator_ColumnPropNameInTable="RazaoSocialColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

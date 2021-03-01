@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabRelPedCompra" targetNamespace="http://tempuri.org/TabRelPedCompra.xsd" xmlns:mstns="http://tempuri.org/TabRelPedCompra.xsd" xmlns="http://tempuri.org/TabRelPedCompra.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tab_RelPedCompraTableAdapter" GeneratorDataComponentClassName="Tab_RelPedCompraTableAdapter" Name="Tab_RelPedCompra" UserDataComponentName="Tab_RelPedCompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T1.Id_Documento, T1.Data, T1.NumPedido, T1.Vendedor, T1.Fone, T1.PrevEntrega, T1.DataRecebimento, T1.Observacao, T1.VlrTotal, T1.Status, 
+ CASE T1.Status WHEN 0 THEN 'Não Confirmado' WHEN 1 THEN 'Em Espera' WHEN 2 THEN 'Recebido' END AS Status, T2.Id_Item, T2.Id_Produto, T2.Qtde, T2.QtdeRecebida, T2.VlrUnitario,
+ T2.VlrTotal AS TOTALITEM, T3.Referencia, T3.Descricao, T1.Id_Pessoa, T4.RazaoSocial AS FORNECEDOR,  T4.Cnpj AS CNPJFORN,T4.Endereco AS ENDFORN, T4.Numero AS NUMFORN, T4.Complemento AS COMPLFORN,T4.Bairro AS BAIRFORN,
+ T4.Cidade AS CIDFORN, T7.Sigla AS UFFORN, T5.FANTASIA AS Filial, T5.Cnpj AS CNPJFILIAL ,T5.Endereco AS ENDFILIAL, T5.Numero AS NUMFILIAL, T5.Complemento AS COMPLFILIAL, T5.Bairro AS BAIRFILIAL, T5.Cidade AS CIDFILIAL, 
+ T8.Sigla AS UFFILIAL, T6.Imagem,T9.RazaoSocial as Transportadora,T2.Pipi,T2.Picms, T1.VlrIpi, T1.VlrIcms, T1.VlrSubTotal,T1.FormaPgto FROM PedCompra AS T1
+ LEFT OUTER JOIN  PedCompraItens AS T2 ON T2.Id_Documento = T1.Id_Documento
+ LEFT OUTER JOIN  Produtos AS T3 ON T3.Id_Produto = T2.Id_Produto
+ LEFT OUTER JOIN  Pessoas AS T4 ON T4.Id_Pessoa = T1.Id_Pessoa
+ LEFT OUTER JOIN  Empresa_Filial AS T5 ON T5.Id_Filial = T1.Id_Filial
+ LEFT OUTER JOIN  TabImagens AS T6 ON T6.Id_Chave = T1.Id_Filial
+ LEFT OUTER JOIN  Estados AS T7 ON T7.Id_UF = T4.Id_UF
+ LEFT OUTER JOIN  Estados AS T8 ON T8.Id_UF = T5.Id_UF
+ LEFT OUTER JOIN  Transportadoras AS T9 ON T9.Id_Transportadora = T1.Id_Transportadora</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Documento" DataSetColumn="Id_Documento" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="NumPedido" DataSetColumn="NumPedido" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="Fone" DataSetColumn="Fone" />
+              <Mapping SourceColumn="PrevEntrega" DataSetColumn="PrevEntrega" />
+              <Mapping SourceColumn="DataRecebimento" DataSetColumn="DataRecebimento" />
+              <Mapping SourceColumn="Observacao" DataSetColumn="Observacao" />
+              <Mapping SourceColumn="VlrTotal" DataSetColumn="VlrTotal" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Status1" DataSetColumn="Status1" />
+              <Mapping SourceColumn="Id_Item" DataSetColumn="Id_Item" />
+              <Mapping SourceColumn="Id_Produto" DataSetColumn="Id_Produto" />
+              <Mapping SourceColumn="Qtde" DataSetColumn="Qtde" />
+              <Mapping SourceColumn="QtdeRecebida" DataSetColumn="QtdeRecebida" />
+              <Mapping SourceColumn="VlrUnitario" DataSetColumn="VlrUnitario" />
+              <Mapping SourceColumn="TOTALITEM" DataSetColumn="TOTALITEM" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="Id_Pessoa" DataSetColumn="Id_Pessoa" />
+              <Mapping SourceColumn="Filial" DataSetColumn="Filial" />
+              <Mapping SourceColumn="Imagem" DataSetColumn="Imagem" />
+              <Mapping SourceColumn="FORNECEDOR" DataSetColumn="FORNECEDOR" />
+              <Mapping SourceColumn="ENDFORN" DataSetColumn="ENDFORN" />
+              <Mapping SourceColumn="NUMFORN" DataSetColumn="NUMFORN" />
+              <Mapping SourceColumn="COMPLFORN" DataSetColumn="COMPLFORN" />
+              <Mapping SourceColumn="BAIRFORN" DataSetColumn="BAIRFORN" />
+              <Mapping SourceColumn="CIDFORN" DataSetColumn="CIDFORN" />
+              <Mapping SourceColumn="UFFORN" DataSetColumn="UFFORN" />
+              <Mapping SourceColumn="ENDFILIAL" DataSetColumn="ENDFILIAL" />
+              <Mapping SourceColumn="NUMFILIAL" DataSetColumn="NUMFILIAL" />
+              <Mapping SourceColumn="COMPLFILIAL" DataSetColumn="COMPLFILIAL" />
+              <Mapping SourceColumn="BAIRFILIAL" DataSetColumn="BAIRFILIAL" />
+              <Mapping SourceColumn="CIDFILIAL" DataSetColumn="CIDFILIAL" />
+              <Mapping SourceColumn="UFFILIAL" DataSetColumn="UFFILIAL" />
+              <Mapping SourceColumn="CNPJFORN" DataSetColumn="CNPJFORN" />
+              <Mapping SourceColumn="CNPJFILIAL" DataSetColumn="CNPJFILIAL" />
+              <Mapping SourceColumn="Transportadora" DataSetColumn="Transportadora" />
+              <Mapping SourceColumn="Pipi" DataSetColumn="Pipi" />
+              <Mapping SourceColumn="Picms" DataSetColumn="Picms" />
+              <Mapping SourceColumn="VlrIpi" DataSetColumn="VlrIpi" />
+              <Mapping SourceColumn="VlrIcms" DataSetColumn="VlrIcms" />
+              <Mapping SourceColumn="VlrSubTotal" DataSetColumn="VlrSubTotal" />
+              <Mapping SourceColumn="FormaPgto" DataSetColumn="FormaPgto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabRelPedCompra" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TabRelPedCompra" msprop:Generator_UserDSName="TabRelPedCompra" msprop:GeneratorDataSetName="TabRelPedCompra">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tab_RelPedCompra" msprop:Generator_UserTableName="Tab_RelPedCompra" msprop:Generator_RowEvArgName="Tab_RelPedCompraRowChangeEvent" msprop:Generator_TableVarName="tableTab_RelPedCompra" msprop:Generator_TablePropName="Tab_RelPedCompra" msprop:Generator_RowDeletingName="Tab_RelPedCompraRowDeleting" msprop:Generator_RowChangingName="Tab_RelPedCompraRowChanging" msprop:Generator_RowDeletedName="Tab_RelPedCompraRowDeleted" msprop:Generator_RowEvHandlerName="Tab_RelPedCompraRowChangeEventHandler" msprop:Generator_TableClassName="Tab_RelPedCompraDataTable" msprop:Generator_RowChangedName="Tab_RelPedCompraRowChanged" msprop:Generator_RowClassName="Tab_RelPedCompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Documento" msprop:Generator_ColumnVarNameInTable="columnId_Documento" msprop:Generator_ColumnPropNameInRow="Id_Documento" msprop:Generator_ColumnPropNameInTable="Id_DocumentoColumn" msprop:Generator_UserColumnName="Id_Documento" type="xs:int" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NumPedido" msprop:Generator_ColumnVarNameInTable="columnNumPedido" msprop:Generator_ColumnPropNameInRow="NumPedido" msprop:Generator_ColumnPropNameInTable="NumPedidoColumn" msprop:Generator_UserColumnName="NumPedido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fone" msprop:Generator_ColumnVarNameInTable="columnFone" msprop:Generator_ColumnPropNameInRow="Fone" msprop:Generator_ColumnPropNameInTable="FoneColumn" msprop:Generator_UserColumnName="Fone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrevEntrega" msprop:Generator_ColumnVarNameInTable="columnPrevEntrega" msprop:Generator_ColumnPropNameInRow="PrevEntrega" msprop:Generator_ColumnPropNameInTable="PrevEntregaColumn" msprop:Generator_UserColumnName="PrevEntrega" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DataRecebimento" msprop:Generator_ColumnVarNameInTable="columnDataRecebimento" msprop:Generator_ColumnPropNameInRow="DataRecebimento" msprop:Generator_ColumnPropNameInTable="DataRecebimentoColumn" msprop:Generator_UserColumnName="DataRecebimento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Observacao" msprop:Generator_ColumnVarNameInTable="columnObservacao" msprop:Generator_ColumnPropNameInRow="Observacao" msprop:Generator_ColumnPropNameInTable="ObservacaoColumn" msprop:Generator_UserColumnName="Observacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VlrTotal" msprop:Generator_ColumnVarNameInTable="columnVlrTotal" msprop:Generator_ColumnPropNameInRow="VlrTotal" msprop:Generator_ColumnPropNameInTable="VlrTotalColumn" msprop:Generator_UserColumnName="VlrTotal" type="xs:double" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" minOccurs="0" />
+              <xs:element name="Status1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStatus1" msprop:Generator_ColumnPropNameInRow="Status1" msprop:Generator_ColumnPropNameInTable="Status1Column" msprop:Generator_UserColumnName="Status1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Item" msprop:Generator_ColumnVarNameInTable="columnId_Item" msprop:Generator_ColumnPropNameInRow="Id_Item" msprop:Generator_ColumnPropNameInTable="Id_ItemColumn" msprop:Generator_UserColumnName="Id_Item" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_Produto" msprop:Generator_ColumnVarNameInTable="columnId_Produto" msprop:Generator_ColumnPropNameInRow="Id_Produto" msprop:Generator_ColumnPropNameInTable="Id_ProdutoColumn" msprop:Generator_UserColumnName="Id_Produto" type="xs:int" minOccurs="0" />
+              <xs:element name="Qtde" msprop:Generator_ColumnVarNameInTable="columnQtde" msprop:Generator_ColumnPropNameInRow="Qtde" msprop:Generator_ColumnPropNameInTable="QtdeColumn" msprop:Generator_UserColumnName="Qtde" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QtdeRecebida" msprop:Generator_ColumnVarNameInTable="columnQtdeRecebida" msprop:Generator_ColumnPropNameInRow="QtdeRecebida" msprop:Generator_ColumnPropNameInTable="QtdeRecebidaColumn" msprop:Generator_UserColumnName="QtdeRecebida" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VlrUnitario" msprop:Generator_ColumnVarNameInTable="columnVlrUnitario" msprop:Generator_ColumnPropNameInRow="VlrUnitario" msprop:Generator_ColumnPropNameInTable="VlrUnitarioColumn" msprop:Generator_UserColumnName="VlrUnitario" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTALITEM" msprop:Generator_ColumnVarNameInTable="columnTOTALITEM" msprop:Generator_ColumnPropNameInRow="TOTALITEM" msprop:Generator_ColumnPropNameInTable="TOTALITEMColumn" msprop:Generator_UserColumnName="TOTALITEM" type="xs:double" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" msprop:Generator_UserColumnName="Referencia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Pessoa" msprop:Generator_ColumnVarNameInTable="columnId_Pessoa" msprop:Generator_ColumnPropNameInRow="Id_Pessoa" msprop:Generator_ColumnPropNameInTable="Id_PessoaColumn" msprop:Generator_UserColumnName="Id_Pessoa" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imagem" msprop:Generator_ColumnVarNameInTable="columnImagem" msprop:Generator_ColumnPropNameInRow="Imagem" msprop:Generator_ColumnPropNameInTable="ImagemColumn" msprop:Generator_UserColumnName="Imagem" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnFORNECEDOR" msprop:Generator_ColumnPropNameInRow="FORNECEDOR" msprop:Generator_ColumnPropNameInTable="FORNECEDORColumn" msprop:Generator_UserColumnName="FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ENDFORN" msprop:Generator_ColumnVarNameInTable="columnENDFORN" msprop:Generator_ColumnPropNameInRow="ENDFORN" msprop:Generator_ColumnPropNameInTable="ENDFORNColumn" msprop:Generator_UserColumnName="ENDFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMFORN" msprop:Generator_ColumnVarNameInTable="columnNUMFORN" msprop:Generator_ColumnPropNameInRow="NUMFORN" msprop:Generator_ColumnPropNameInTable="NUMFORNColumn" msprop:Generator_UserColumnName="NUMFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMPLFORN" msprop:Generator_ColumnVarNameInTable="columnCOMPLFORN" msprop:Generator_ColumnPropNameInRow="COMPLFORN" msprop:Generator_ColumnPropNameInTable="COMPLFORNColumn" msprop:Generator_UserColumnName="COMPLFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAIRFORN" msprop:Generator_ColumnVarNameInTable="columnBAIRFORN" msprop:Generator_ColumnPropNameInRow="BAIRFORN" msprop:Generator_ColumnPropNameInTable="BAIRFORNColumn" msprop:Generator_UserColumnName="BAIRFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CIDFORN" msprop:Generator_ColumnVarNameInTable="columnCIDFORN" msprop:Generator_ColumnPropNameInRow="CIDFORN" msprop:Generator_ColumnPropNameInTable="CIDFORNColumn" msprop:Generator_UserColumnName="CIDFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UFFORN" msprop:Generator_ColumnVarNameInTable="columnUFFORN" msprop:Generator_ColumnPropNameInRow="UFFORN" msprop:Generator_ColumnPropNameInTable="UFFORNColumn" msprop:Generator_UserColumnName="UFFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ENDFILIAL" msprop:Generator_ColumnVarNameInTable="columnENDFILIAL" msprop:Generator_ColumnPropNameInRow="ENDFILIAL" msprop:Generator_ColumnPropNameInTable="ENDFILIALColumn" msprop:Generator_UserColumnName="ENDFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMFILIAL" msprop:Generator_ColumnVarNameInTable="columnNUMFILIAL" msprop:Generator_ColumnPropNameInRow="NUMFILIAL" msprop:Generator_ColumnPropNameInTable="NUMFILIALColumn" msprop:Generator_UserColumnName="NUMFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMPLFILIAL" msprop:Generator_ColumnVarNameInTable="columnCOMPLFILIAL" msprop:Generator_ColumnPropNameInRow="COMPLFILIAL" msprop:Generator_ColumnPropNameInTable="COMPLFILIALColumn" msprop:Generator_UserColumnName="COMPLFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAIRFILIAL" msprop:Generator_ColumnVarNameInTable="columnBAIRFILIAL" msprop:Generator_ColumnPropNameInRow="BAIRFILIAL" msprop:Generator_ColumnPropNameInTable="BAIRFILIALColumn" msprop:Generator_UserColumnName="BAIRFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CIDFILIAL" msprop:Generator_ColumnVarNameInTable="columnCIDFILIAL" msprop:Generator_ColumnPropNameInRow="CIDFILIAL" msprop:Generator_ColumnPropNameInTable="CIDFILIALColumn" msprop:Generator_UserColumnName="CIDFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UFFILIAL" msprop:Generator_ColumnVarNameInTable="columnUFFILIAL" msprop:Generator_ColumnPropNameInRow="UFFILIAL" msprop:Generator_ColumnPropNameInTable="UFFILIALColumn" msprop:Generator_UserColumnName="UFFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CNPJFORN" msprop:Generator_ColumnVarNameInTable="columnCNPJFORN" msprop:Generator_ColumnPropNameInRow="CNPJFORN" msprop:Generator_ColumnPropNameInTable="CNPJFORNColumn" msprop:Generator_UserColumnName="CNPJFORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CNPJFILIAL" msprop:Generator_ColumnVarNameInTable="columnCNPJFILIAL" msprop:Generator_ColumnPropNameInRow="CNPJFILIAL" msprop:Generator_ColumnPropNameInTable="CNPJFILIALColumn" msprop:Generator_UserColumnName="CNPJFILIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transportadora" msprop:Generator_ColumnVarNameInTable="columnTransportadora" msprop:Generator_ColumnPropNameInRow="Transportadora" msprop:Generator_ColumnPropNameInTable="TransportadoraColumn" msprop:Generator_UserColumnName="Transportadora" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pipi" msprop:Generator_ColumnVarNameInTable="columnPipi" msprop:Generator_ColumnPropNameInRow="Pipi" msprop:Generator_ColumnPropNameInTable="PipiColumn" msprop:Generator_UserColumnName="Pipi" type="xs:double" minOccurs="0" />
+              <xs:element name="Picms" msprop:Generator_ColumnVarNameInTable="columnPicms" msprop:Generator_ColumnPropNameInRow="Picms" msprop:Generator_ColumnPropNameInTable="PicmsColumn" msprop:Generator_UserColumnName="Picms" type="xs:double" minOccurs="0" />
+              <xs:element name="VlrIpi" msprop:Generator_ColumnVarNameInTable="columnVlrIpi" msprop:Generator_ColumnPropNameInRow="VlrIpi" msprop:Generator_ColumnPropNameInTable="VlrIpiColumn" msprop:Generator_UserColumnName="VlrIpi" type="xs:double" minOccurs="0" />
+              <xs:element name="VlrIcms" msprop:Generator_ColumnVarNameInTable="columnVlrIcms" msprop:Generator_ColumnPropNameInRow="VlrIcms" msprop:Generator_ColumnPropNameInTable="VlrIcmsColumn" msprop:Generator_UserColumnName="VlrIcms" type="xs:double" minOccurs="0" />
+              <xs:element name="VlrSubTotal" msprop:Generator_ColumnVarNameInTable="columnVlrSubTotal" msprop:Generator_ColumnPropNameInRow="VlrSubTotal" msprop:Generator_ColumnPropNameInTable="VlrSubTotalColumn" msprop:Generator_UserColumnName="VlrSubTotal" type="xs:double" minOccurs="0" />
+              <xs:element name="FormaPgto" msprop:Generator_ColumnVarNameInTable="columnFormaPgto" msprop:Generator_ColumnPropNameInRow="FormaPgto" msprop:Generator_ColumnPropNameInTable="FormaPgtoColumn" msprop:Generator_UserColumnName="FormaPgto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

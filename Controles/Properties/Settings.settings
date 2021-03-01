@@ -1,0 +1,132 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Controles.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Controles_HNfe_StatusServico_NfeStatusServico" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeStatusServico</Value>
+    </Setting>
+    <Setting Name="Controles_HNfe_RecepcaoNfe_NfeRecepcao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeRecepcao</Value>
+    </Setting>
+    <Setting Name="Controles_HNfe_RetRecepcaoNfe_NfeRetRecepcao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeRetRecepcao</Value>
+    </Setting>
+    <Setting Name="Controles_HNfe_CancelaNfe_NfeCancelamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeCancelamento</Value>
+    </Setting>
+    <Setting Name="Controles_HNfe_InutilizacaoNfe_NfeInutilizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeInutilizacao</Value>
+    </Setting>
+    <Setting Name="Controles_HNfe_ConsultaNfe_NfeConsulta" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe/services/NfeConsulta</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_RecepcaoNfe_NfeRecepcao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeRecepcao</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_RetRecepcaoNfe_NfeRetRecepcao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeRetRecepcao</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_CancelaNfe_NfeCancelamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeCancelamento</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_InutilizacaoNfe_NfeInutilizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeInutilizacao</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_ConsultaNfe_NfeConsulta" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeConsulta</Value>
+    </Setting>
+    <Setting Name="Controles_Nfe_StatusServico_NfeStatusServico" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe/services/NfeStatusServico</Value>
+    </Setting>
+    <Setting Name="Controles_Serv_SaldoEstoque_ConsultaSaldo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/WSSaldoEstoque/BuscaSaldoEstoque.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_Serv_DebitoCliente_DebitoCliente" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/WSDebitoCliente/DebitoCliente.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_Serv_CadPessoa_AtualizarCadastro" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/WSCadPessoa/AtualizarCadastro.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_EnviarFinanceiro_RegFaturamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/ERP-SGE_WebService/RegFaturamento.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_Cancelar2_NfeCancelamento2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeCancelamento2</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_Consulta2_NfeConsulta2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeConsulta2</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_Inutilizacao2_NfeInutilizacao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeInutilizacao2</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_Recepcao2_NfeRecepcao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeRecepcao2</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_RetRecepcao2_NfeRetRecepcao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeRetRecepcao2</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_StatusServico2_NfeStatusServico2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfeh.sefaz.ce.gov.br:443/nfe2/services/NfeStatusServico2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_Cancelar2_NfeCancelamento2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeCancelamento2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_Consulta2_NfeConsulta2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeConsulta2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_Inutilizacao2_NfeInutilizacao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeInutilizacao2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_Recepcao2_NfeRecepcao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeRecepcao2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_RetRecepcao2_NfeRetRecepcao2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeRetRecepcao2</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_StatusServico2_NfeStatusServico2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/NfeStatusServico2</Value>
+    </Setting>
+    <Setting Name="Controles_GerarNumNF_GerarNumNF" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/ERP-SGE_WebService/GerarNumNF.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_RegistrarPedidoVenda_RegistroVenda" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/ERP-SGE_WebService/RegistroVenda.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_RecepcaoEvento_RecepcaoEvento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br:443/nfe2/services/RecepcaoEvento</Value>
+    </Setting>
+    <Setting Name="Controles_UltimaCompraCliente_UltCompraCliente" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://177.19.133.130/ERP-SGE_WebService/UltCompraCliente.asmx</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_Autorizacao_NfeAutorizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfe.sefaz.ce.gov.br:80/nfe2/services/NfeAutorizacao</Value>
+    </Setting>
+    <Setting Name="Controles_NFE_RetAutorizacao_NfeRetAutorizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br/nfe2/services/NfeRetAutorizacao</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_RetAutorizacao_NfeRetAutorizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nfe.sefaz.ce.gov.br/nfe2/services/NfeRetAutorizacao</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_Autorizacao_NfeAutorizacao" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfeh.sefaz.ce.gov.br:80/nfe2/services/NfeAutorizacao</Value>
+    </Setting>
+    <Setting Name="Controles_HNFE_RecepcaoEvento_RecepcaoEvento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfeh.sefaz.ce.gov.br:80/nfe2/services/RecepcaoEvento</Value>
+    </Setting>
+    <Setting Name="Controles_NFeAutorizacao4_NFeAutorizacao4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfe.sefaz.ce.gov.br:80/nfe4/services/NFeAutorizacao4</Value>
+    </Setting>
+    <Setting Name="Controles_NFeConsultaProtocolo4_NFeConsultaProtocolo4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfe.sefaz.ce.gov.br:80/nfe4/services/NFeConsultaProtocolo4</Value>
+    </Setting>
+    <Setting Name="Controles_NFeRecepcaoEvento4_NFeRecepcaoEvento4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfe.sefaz.ce.gov.br:80/nfe4/services/NFeRecepcaoEvento4</Value>
+    </Setting>
+    <Setting Name="Controles_NFeRetAutorizacao4_NFeRetAutorizacao4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nfe.sefaz.ce.gov.br:80/nfe4/services/NFeRetAutorizacao4</Value>
+    </Setting>
+    <Setting Name="Controles_NFeDistribuicaoDFe_NFeDistribuicaoDFe" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

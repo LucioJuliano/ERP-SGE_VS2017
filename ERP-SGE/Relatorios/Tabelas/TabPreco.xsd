@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabPreco" targetNamespace="http://tempuri.org/TabPreco.xsd" xmlns:mstns="http://tempuri.org/TabPreco.xsd" xmlns="http://tempuri.org/TabPreco.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGEConnectionString5" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGEConnectionString5 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGEConnectionString5" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabPrecoTableAdapter" GeneratorDataComponentClassName="TabPrecoTableAdapter" Name="TabPreco" UserDataComponentName="TabPrecoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGEConnectionString5 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T2.ID_GRUPO,T2.GRUPO,T1.ID_PRODUTO,T1.REFERENCIA,T1.DESCRICAO,T1.PRCSENSACIONAL,T1.PRCESPECIAL,T1.PRCMINIMO,T1.PRCVAREJO,T1.PRCATACADO,T1.ULTPRCCOMPRA FROM PRODUTOS T1
+  LEFT JOIN GRUPOPRODUTO T2 ON (T2.ID_GRUPO=T1.ID_GRUPO)
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_GRUPO" DataSetColumn="ID_GRUPO" />
+              <Mapping SourceColumn="GRUPO" DataSetColumn="GRUPO" />
+              <Mapping SourceColumn="ID_PRODUTO" DataSetColumn="ID_PRODUTO" />
+              <Mapping SourceColumn="REFERENCIA" DataSetColumn="REFERENCIA" />
+              <Mapping SourceColumn="DESCRICAO" DataSetColumn="DESCRICAO" />
+              <Mapping SourceColumn="PRCSENSACIONAL" DataSetColumn="PRCSENSACIONAL" />
+              <Mapping SourceColumn="PRCESPECIAL" DataSetColumn="PRCESPECIAL" />
+              <Mapping SourceColumn="PRCMINIMO" DataSetColumn="PRCMINIMO" />
+              <Mapping SourceColumn="PRCVAREJO" DataSetColumn="PRCVAREJO" />
+              <Mapping SourceColumn="PRCATACADO" DataSetColumn="PRCATACADO" />
+              <Mapping SourceColumn="ULTPRCCOMPRA" DataSetColumn="ULTPRCCOMPRA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabPreco" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TabPreco" msprop:Generator_UserDSName="TabPreco" msprop:GeneratorDataSetName="TabPreco">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TabPreco" msprop:Generator_TableClassName="TabPrecoDataTable" msprop:Generator_TableVarName="tableTabPreco" msprop:Generator_TablePropName="_TabPreco" msprop:Generator_RowDeletingName="TabPrecoRowDeleting" msprop:Generator_RowChangingName="TabPrecoRowChanging" msprop:Generator_RowEvHandlerName="TabPrecoRowChangeEventHandler" msprop:Generator_RowDeletedName="TabPrecoRowDeleted" msprop:Generator_UserTableName="TabPreco" msprop:Generator_RowChangedName="TabPrecoRowChanged" msprop:Generator_RowEvArgName="TabPrecoRowChangeEvent" msprop:Generator_RowClassName="TabPrecoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_GRUPO" msprop:Generator_ColumnVarNameInTable="columnID_GRUPO" msprop:Generator_ColumnPropNameInRow="ID_GRUPO" msprop:Generator_ColumnPropNameInTable="ID_GRUPOColumn" msprop:Generator_UserColumnName="ID_GRUPO" type="xs:int" minOccurs="0" />
+              <xs:element name="GRUPO" msprop:Generator_ColumnVarNameInTable="columnGRUPO" msprop:Generator_ColumnPropNameInRow="GRUPO" msprop:Generator_ColumnPropNameInTable="GRUPOColumn" msprop:Generator_UserColumnName="GRUPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_PRODUTOColumn" msprop:Generator_UserColumnName="ID_PRODUTO" type="xs:int" />
+              <xs:element name="REFERENCIA" msprop:Generator_ColumnVarNameInTable="columnREFERENCIA" msprop:Generator_ColumnPropNameInRow="REFERENCIA" msprop:Generator_ColumnPropNameInTable="REFERENCIAColumn" msprop:Generator_UserColumnName="REFERENCIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnDESCRICAO" msprop:Generator_ColumnPropNameInRow="DESCRICAO" msprop:Generator_ColumnPropNameInTable="DESCRICAOColumn" msprop:Generator_UserColumnName="DESCRICAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRCSENSACIONAL" msprop:Generator_ColumnVarNameInTable="columnPRCSENSACIONAL" msprop:Generator_ColumnPropNameInRow="PRCSENSACIONAL" msprop:Generator_ColumnPropNameInTable="PRCSENSACIONALColumn" msprop:Generator_UserColumnName="PRCSENSACIONAL" type="xs:double" minOccurs="0" />
+              <xs:element name="PRCESPECIAL" msprop:Generator_ColumnVarNameInTable="columnPRCESPECIAL" msprop:Generator_ColumnPropNameInRow="PRCESPECIAL" msprop:Generator_ColumnPropNameInTable="PRCESPECIALColumn" msprop:Generator_UserColumnName="PRCESPECIAL" type="xs:double" minOccurs="0" />
+              <xs:element name="PRCMINIMO" msprop:Generator_ColumnVarNameInTable="columnPRCMINIMO" msprop:Generator_ColumnPropNameInRow="PRCMINIMO" msprop:Generator_ColumnPropNameInTable="PRCMINIMOColumn" msprop:Generator_UserColumnName="PRCMINIMO" type="xs:double" minOccurs="0" />
+              <xs:element name="PRCVAREJO" msprop:Generator_ColumnVarNameInTable="columnPRCVAREJO" msprop:Generator_ColumnPropNameInRow="PRCVAREJO" msprop:Generator_ColumnPropNameInTable="PRCVAREJOColumn" msprop:Generator_UserColumnName="PRCVAREJO" type="xs:double" minOccurs="0" />
+              <xs:element name="PRCATACADO" msprop:Generator_ColumnVarNameInTable="columnPRCATACADO" msprop:Generator_ColumnPropNameInRow="PRCATACADO" msprop:Generator_ColumnPropNameInTable="PRCATACADOColumn" msprop:Generator_UserColumnName="PRCATACADO" type="xs:double" minOccurs="0" />
+              <xs:element name="ULTPRCCOMPRA" msprop:Generator_ColumnVarNameInTable="columnULTPRCCOMPRA" msprop:Generator_ColumnPropNameInRow="ULTPRCCOMPRA" msprop:Generator_ColumnPropNameInTable="ULTPRCCOMPRAColumn" msprop:Generator_UserColumnName="ULTPRCCOMPRA" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:TabPreco" />
+      <xs:field xpath="mstns:ID_GRUPO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

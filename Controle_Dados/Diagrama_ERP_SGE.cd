@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Controle_Dados.Usuarios" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACZiCjwLFqXCtSI2IONBCQ0SACEQCJMwMAK0UYICQMI=</HashCode>
+      <FileName>Usuarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Estados" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAKACEAAAAAAgAAIggAAAUAAgAgAAABAg=</HashCode>
+      <FileName>Estados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Filiais" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CDACYgIggGgAIiAMACIGTgCAAAGIRAAYQEACAECLGME=</HashCode>
+      <FileName>Filiais.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.RamoAtividade" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAAEAgAAQAAAAAAAAAAQAAAgAAAAAgA=</HashCode>
+      <FileName>RamoAtividade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CFOP" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAACgBIAAEAAAAAAgAEAAAAAAQAAAAAAACAQA=</HashCode>
+      <FileName>CFOP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Rotas" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAFAIAAEAAEAAAAAAAgAAAAQABAAABAAAAA=</HashCode>
+      <FileName>Rotas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Departamentos" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAABAIAgEAAAAQAIAAAwAAAAQAAAACAAAAAA=</HashCode>
+      <FileName>Departamentos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Transportadoras" Collapsed="true">
+    <Position X="11" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAACMgAAgCgEsCAEAAAAQgCAEAEIQAAYQEAGAUgBEsE=</HashCode>
+      <FileName>Transportadoras.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Pessoas" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>D1Fjuihw0C1VtCoFALdZUgqCEGUOUBAYYFtmHUnLk9U=</HashCode>
+      <FileName>Pessoas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CentroCusto" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAggAAAAIAAEAAAAAAAAAAAAAAAQAAAASAAAAQA=</HashCode>
+      <FileName>CentroCusto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.TipoDocumento" Collapsed="true">
+    <Position X="3.5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAEqCUFEAQgAAAECAAQAAASYAAAAABAAAI=</HashCode>
+      <FileName>TipoDocumento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Bancos" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAQFgAAABIACMAAAAAAAIAQgAQBAUAAAAAQAAgAE=</HashCode>
+      <FileName>Bancos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ContaCaixa" Collapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAAIAAEAACAAAAQAAAIAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>ContaCaixa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.FormaPagamento" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAgCAABAAABAIAQFAIQAEAIoAAAACAAQIgQAkBAAAAA=</HashCode>
+      <FileName>FormaPagamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.GrupoProduto" Collapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAgAIAEIIAEACFAIEEASAEAgQAQAAAAhBAAAAI=</HashCode>
+      <FileName>GrupoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Produtos" Collapsed="true">
+    <Position X="11" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>Q0TyYJlwgIANYIDnQSELcUEgegAkASQQEoQAIUFJMnQ=</HashCode>
+      <FileName>Produtos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Vendedores" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>QAEiEAwAgCiAIAAEACFiAAAAAAEAAAAQAAAgUEhAAAA=</HashCode>
+      <FileName>Vendedores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Cotacao" Collapsed="true">
+    <Position X="2" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AQECJAAEAQBAKAUEgAAAAAAAwAgIABgSAAAEMAAFAgQ=</HashCode>
+      <FileName>Cotacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CotacaoItens" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACDAAQQAAAIQAEAAAIBAACgABAAQAQAAAAEAAhAAA=</HashCode>
+      <FileName>CotacaoItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CotacaoPessoas" Collapsed="true">
+    <Position X="5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAQQAAAIQAEAAAAAAADgABAAAAQAAAAEAAAAAA=</HashCode>
+      <FileName>CotacaoPessoas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.PedCompra" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAUCLIQEAQAEIAQEgAIgEAACAAAARBgQAAAkYRADAgA=</HashCode>
+      <FileName>PedCompra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.PedCompraItens" Collapsed="true">
+    <Position X="8" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAACBIAQQgAGIQAEAAAIBAAAAABAAUAQACAAAAAhAAA=</HashCode>
+      <FileName>PedCompraItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvEstoque" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>gSIDLBhMBwAQLBSEawOAQwECYQDgIBASnADsMAczSgQ=</HashCode>
+      <FileName>MvEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvEstoqueItens" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAADBABYQgAEIYQEKBCKBgBAQABAA0AQECAAIAAjAAI=</HashCode>
+      <FileName>MvEstoqueItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Financeiro" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAgnakptUABhIQ8NAIZBJUwWYlxZBAgQEwQBGwSCAyo=</HashCode>
+      <FileName>Financeiro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.TabelasAux" Collapsed="true">
+    <Position X="2" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BAECAAAgAAgBEAAAAABAAAAgOIAAiAAAACAgkggAEAA=</HashCode>
+      <FileName>TabelasAux.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CaixaBalcao" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAICBAQEAQAAEAQAAAIAAAAQAAAIABAIgCAkQABDAAA=</HashCode>
+      <FileName>CaixaBalcao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvCaixaBalcao" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BQACAIAEAAAFIAQEAABAAQAUEAAIAAAQAAAAAAAAAAQ=</HashCode>
+      <FileName>MvCaixaBalcao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvVenda" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAAjLh1POR0EtK8lEDpwUoCSAoQIQHmYFFEUdW0Tt8E=</HashCode>
+      <FileName>MvVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvVendaItens" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AQAKBACQUCAYYQBEAAANxAAAKEBAAQoQEBQAAighARQ=</HashCode>
+      <FileName>MvVendaItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Entregadores" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ABACEAAIkAgIIAAEACAAAAAAAAAAAAAQACAAAAgAAAA=</HashCode>
+      <FileName>Entregadores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.NotaFiscal" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>SBCWKjjMwyxVIAQk6gKQRRSGoYCAAJgcElAkIBLDG0E=</HashCode>
+      <FileName>NotaFiscal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.NotaFiscalItens" Collapsed="true">
+    <Position X="2" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACBCAQQgAAIQQEaBCIZQAAAADAAUAQEDgAAAAhAQI=</HashCode>
+      <FileName>NotaFiscalItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Parametros" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ihFCACR3ULkMKAYGgGIABABgFTFHADARgSKQNBAPKCM=</HashCode>
+      <FileName>Parametros.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.AcessoUsuario" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>AcessoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Auditoria" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAADAAQAAAABHAAAAABIAQAAEIAAABACAQAEQgACAAQ=</HashCode>
+      <FileName>Auditoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ControleCheque" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BAgCKAAEAAErMAQEAAJQCUAOECBAABQQAEQAAAACgiA=</HashCode>
+      <FileName>ControleCheque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ProdutosKitItens" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQQAAAIAAEAEAIBAAAAAAACQAQAAAAAAAgAAA=</HashCode>
+      <FileName>ProdutosKitItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.GeneroProduto" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAEIACEAAAAAAIAAAAgAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>GeneroProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ControleInstalacao" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAqKggEwQgAsAQEAABAgQACAAAQABgQBAAEIACAMwA=</HashCode>
+      <FileName>ControleInstalacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.AgenteCobrador" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAIAAEAAEAAAAAABAAABAQAAAAAAAAAAA=</HashCode>
+      <FileName>AgenteCobrador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.AIDFs" Collapsed="true">
+    <Position X="2" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIIAABIIAEAgBAAQAiAAAAAAgQAQAAACAAAAA=</HashCode>
+      <FileName>AIDFs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ComissaoPrdCliente" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AQACCACAAAAAIAAEAABIAQACAAAAAQAQAAAAAAAAAAA=</HashCode>
+      <FileName>ComissaoPrdCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CupomFiscal" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAADBAAMAAAAIAQEAABAgwAAAAAAABgQEAQEAAIBAQA=</HashCode>
+      <FileName>CupomFiscal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.CupomFiscalItens" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACBkAQQgAAIQQAYABIJQACAAJAAQEQACAAhAAhAAA=</HashCode>
+      <FileName>CupomFiscalItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MensagemAlerta" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BABCCAQEABAAIMQEQABAAYACAAAEABAQAAAEwAAAEAI=</HashCode>
+      <FileName>MensagemAlerta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Funcionarios" Collapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAomHljg2CwhYC4GggCc8lKGGa0iJUE4huBDIU2BsFE=</HashCode>
+      <FileName>Funcionarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.AgendaVisita" Collapsed="true">
+    <Position X="11" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAiCAgkAAAAJAQMAAjBAUADAggABBgQASAEgAAAAQA=</HashCode>
+      <FileName>AgendaVisita.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ProvDescontos" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BQACAAAAQAABIAAEAAAAABEEEAAAAAAQAAAAAAEAAAQ=</HashCode>
+      <FileName>ProvDescontos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ProvDescFunc" Collapsed="true">
+    <Position X="2" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAQAAABIAEEAABAERAEEAAAAAIQAAAAAAAAAAA=</HashCode>
+      <FileName>ProvDescFunc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MvFolhaPag" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BAACgAAQBAABIAEEAABAERAEEABAAAIQAAAAAAAAAAA=</HashCode>
+      <FileName>MvFolhaPag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.PrevCustos" Collapsed="true">
+    <Position X="5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>JRASAAAAgAZAIAEMEAJAQQQAwAAAaIAUAAAAGAICAwA=</HashCode>
+      <FileName>PrevCustos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MapaEntrega" Collapsed="true">
+    <Position X="6.5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEEAAEMIUEACAAAAAAAAgAABQQAAAECAAAAAA=</HashCode>
+      <FileName>MapaEntrega.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.MapaEntregaItens" Collapsed="true">
+    <Position X="8" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAEIIQEACBAAQAAAAgAAAgQAAAAAAAAAQA=</HashCode>
+      <FileName>MapaEntregaItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Veiculos" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAMAEEAAIAAAAAAFAAAAAQAAEAAAAAAAA=</HashCode>
+      <FileName>Veiculos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Balanco" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACIQAEAABAIAQEAAAACAASgCgAABAYAAAEAAAAAgA=</HashCode>
+      <FileName>Balanco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.BalancoItens" Collapsed="true">
+    <Position X="2" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AACCIAAQQAAAIAAEAAAIBAACAAAAAQAYAAAAAAAgAkA=</HashCode>
+      <FileName>BalancoItens.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.ReducaoFiscal" Collapsed="true">
+    <Position X="11" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAENEAEAAAAAAAAAAAAAACQCAAAAAAAABA=</HashCode>
+      <FileName>ReducaoFiscal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.Premiacao" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AGYSAAABEgADIQYcAAVACQBgAA4ASAMwCgAA1QgABCg=</HashCode>
+      <FileName>Premiacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.PremiacaoMesAno" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>QEQiAAgAAACAIAQEAADAAQAgAAwAAAIQAAEAgAZAAAA=</HashCode>
+      <FileName>PremiacaoMesAno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controle_Dados.TabAuxFinanceiro">
+    <Position X="6.5" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TabAuxFinanceiro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

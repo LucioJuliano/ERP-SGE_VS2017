@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TabVendedorXCliente" targetNamespace="http://tempuri.org/TabVendedorXCliente.xsd" xmlns:mstns="http://tempuri.org/TabVendedorXCliente.xsd" xmlns="http://tempuri.org/TabVendedorXCliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ERP_SGE" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ERP_SGE (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ERP_SGE.Properties.Settings.GlobalReference.Default.BD_ERP_SGE" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabCurvaVendedorXClienteTableAdapter" GeneratorDataComponentClassName="TabCurvaVendedorXClienteTableAdapter" Name="TabCurvaVendedorXCliente" UserDataComponentName="TabCurvaVendedorXClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        T1.Id_Vendedor, T3.Vendedor, T1.Id_Pessoa, T2.RazaoSocial, SUM(T1.VlrTotal) AS TOTAL
+FROM            MvVenda AS T1 LEFT OUTER JOIN
+                         Pessoas AS T2 ON T2.Id_Pessoa = T1.Id_Pessoa LEFT OUTER JOIN
+                         Vendedores AS T3 ON T3.Id_Vendedor = T1.Id_Vendedor
+WHERE        (T1.Status = 3) AND (T1.TpVenda IN ('PV', 'VF'))
+GROUP BY T1.Id_Vendedor, T3.Vendedor, T1.Id_Pessoa, T2.RazaoSocial
+ORDER BY T3.Vendedor, TOTAL DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="Id_Vendedor" DataSetColumn="Id_Vendedor" />
+              <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
+              <Mapping SourceColumn="Id_Pessoa" DataSetColumn="Id_Pessoa" />
+              <Mapping SourceColumn="RazaoSocial" DataSetColumn="RazaoSocial" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProdutoXClienteTableAdapter" GeneratorDataComponentClassName="ProdutoXClienteTableAdapter" Name="ProdutoXCliente" UserDataComponentName="ProdutoXClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        T2.Id_Vendedor, T2.Id_Pessoa, T3.Referencia, T3.Descricao, SUM(T1.Qtde) AS QTDE, SUM(T1.VlrUntReal * T1.Qtde) AS TOTALPRD
+FROM            MvVendaItens AS T1 LEFT OUTER JOIN
+                         MvVenda AS T2 ON T2.Id_Venda = T1.Id_Venda LEFT OUTER JOIN
+                         Produtos AS T3 ON T3.Id_Produto = T1.Id_Produto
+WHERE        (T1.TipoItem IN ('S', 'N')) AND (T2.Status = 3) AND (T2.TpVenda IN ('PV', 'VF'))
+GROUP BY T2.Id_Vendedor, T2.Id_Pessoa, T3.Referencia, T3.Descricao</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Vendedor" DataSetColumn="Id_Vendedor" />
+              <Mapping SourceColumn="Id_Pessoa" DataSetColumn="Id_Pessoa" />
+              <Mapping SourceColumn="Referencia" DataSetColumn="Referencia" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="QTDE" DataSetColumn="QTDE" />
+              <Mapping SourceColumn="TOTALPRD" DataSetColumn="TOTALPRD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VendasXProdutoXGrupoTableAdapter" GeneratorDataComponentClassName="VendasXProdutoXGrupoTableAdapter" Name="VendasXProdutoXGrupo" UserDataComponentName="VendasXProdutoXGrupoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ERP_SGE (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT T6.RAZAOSOCIAL AS PESSOA,T5.VENDEDOR,T4.GRUPO,T3.REFERENCIA,T3.DESCRICAO,SUM(T1.QTDE) AS QTDETOTAL,SUM(T1.VLRUNTCOMISSAO*T1.QTDE) AS VALORTOTAL,0 AS QTDEFATURADA,0 AS PONTOS FROM MVVENDAITENS T1
+  LEFT JOIN MVVENDA T2 ON (T2.ID_VENDA=T1.ID_VENDA)
+  LEFT JOIN PRODUTOS T3 ON (T3.ID_PRODUTO=T1.ID_PRODUTO)
+  LEFT JOIN GRUPOPRODUTO T4 ON (T4.ID_GRUPO=T3.ID_GRUPO)
+  LEFT JOIN VENDEDORES T5 ON (T5.ID_VENDEDOR=T2.ID_VENDEDOR)
+  LEFT JOIN PESSOAS T6 ON (T6.ID_PESSOA=T2.ID_PESSOA)
+WHERE T2.STATUS=3
+GROUP BY T6.RAZAOSOCIAL,T5.VENDEDOR,T4.GRUPO,T3.REFERENCIA,T3.DESCRICAO
+ORDER BY T5.VENDEDOR,T4.GRUPO,QTDETOTAL DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VENDEDOR" DataSetColumn="VENDEDOR" />
+              <Mapping SourceColumn="GRUPO" DataSetColumn="GRUPO" />
+              <Mapping SourceColumn="REFERENCIA" DataSetColumn="REFERENCIA" />
+              <Mapping SourceColumn="DESCRICAO" DataSetColumn="DESCRICAO" />
+              <Mapping SourceColumn="QTDETOTAL" DataSetColumn="QTDETOTAL" />
+              <Mapping SourceColumn="VALORTOTAL" DataSetColumn="VALORTOTAL" />
+              <Mapping SourceColumn="QTDEFATURADA" DataSetColumn="QTDEFATURADA" />
+              <Mapping SourceColumn="PESSOA" DataSetColumn="PESSOA" />
+              <Mapping SourceColumn="PONTOS" DataSetColumn="PONTOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TabVendedorXCliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TabVendedorXCliente" msprop:Generator_UserDSName="TabVendedorXCliente" msprop:GeneratorDataSetName="TabVendedorXCliente">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TabCurvaVendedorXCliente" msprop:Generator_UserTableName="TabCurvaVendedorXCliente" msprop:Generator_RowEvArgName="TabCurvaVendedorXClienteRowChangeEvent" msprop:Generator_TableVarName="tableTabCurvaVendedorXCliente" msprop:Generator_TablePropName="TabCurvaVendedorXCliente" msprop:Generator_RowDeletingName="TabCurvaVendedorXClienteRowDeleting" msprop:Generator_RowChangingName="TabCurvaVendedorXClienteRowChanging" msprop:Generator_RowDeletedName="TabCurvaVendedorXClienteRowDeleted" msprop:Generator_RowEvHandlerName="TabCurvaVendedorXClienteRowChangeEventHandler" msprop:Generator_TableClassName="TabCurvaVendedorXClienteDataTable" msprop:Generator_RowChangedName="TabCurvaVendedorXClienteRowChanged" msprop:Generator_RowClassName="TabCurvaVendedorXClienteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TOTAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:double" minOccurs="0" />
+              <xs:element name="Id_Vendedor" msprop:Generator_ColumnVarNameInTable="columnId_Vendedor" msprop:Generator_ColumnPropNameInRow="Id_Vendedor" msprop:Generator_ColumnPropNameInTable="Id_VendedorColumn" msprop:Generator_UserColumnName="Id_Vendedor" type="xs:int" minOccurs="0" />
+              <xs:element name="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_UserColumnName="Vendedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Pessoa" msprop:Generator_ColumnVarNameInTable="columnId_Pessoa" msprop:Generator_ColumnPropNameInRow="Id_Pessoa" msprop:Generator_ColumnPropNameInTable="Id_PessoaColumn" msprop:Generator_UserColumnName="Id_Pessoa" type="xs:int" minOccurs="0" />
+              <xs:element name="RazaoSocial" msprop:Generator_ColumnVarNameInTable="columnRazaoSocial" msprop:Generator_ColumnPropNameInRow="RazaoSocial" msprop:Generator_ColumnPropNameInTable="RazaoSocialColumn" msprop:Generator_UserColumnName="RazaoSocial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProdutoXCliente" msprop:Generator_UserTableName="ProdutoXCliente" msprop:Generator_RowEvArgName="ProdutoXClienteRowChangeEvent" msprop:Generator_TableVarName="tableProdutoXCliente" msprop:Generator_TablePropName="ProdutoXCliente" msprop:Generator_RowDeletingName="ProdutoXClienteRowDeleting" msprop:Generator_RowChangingName="ProdutoXClienteRowChanging" msprop:Generator_RowDeletedName="ProdutoXClienteRowDeleted" msprop:Generator_RowEvHandlerName="ProdutoXClienteRowChangeEventHandler" msprop:Generator_TableClassName="ProdutoXClienteDataTable" msprop:Generator_RowChangedName="ProdutoXClienteRowChanged" msprop:Generator_RowClassName="ProdutoXClienteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Vendedor" msprop:Generator_ColumnVarNameInTable="columnId_Vendedor" msprop:Generator_ColumnPropNameInRow="Id_Vendedor" msprop:Generator_ColumnPropNameInTable="Id_VendedorColumn" msprop:Generator_UserColumnName="Id_Vendedor" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_Pessoa" msprop:Generator_ColumnVarNameInTable="columnId_Pessoa" msprop:Generator_ColumnPropNameInRow="Id_Pessoa" msprop:Generator_ColumnPropNameInTable="Id_PessoaColumn" msprop:Generator_UserColumnName="Id_Pessoa" type="xs:int" minOccurs="0" />
+              <xs:element name="Referencia" msprop:Generator_ColumnVarNameInTable="columnReferencia" msprop:Generator_ColumnPropNameInRow="Referencia" msprop:Generator_ColumnPropNameInTable="ReferenciaColumn" msprop:Generator_UserColumnName="Referencia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QTDE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQTDE" msprop:Generator_ColumnPropNameInRow="QTDE" msprop:Generator_ColumnPropNameInTable="QTDEColumn" msprop:Generator_UserColumnName="QTDE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALPRD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALPRD" msprop:Generator_ColumnPropNameInRow="TOTALPRD" msprop:Generator_ColumnPropNameInTable="TOTALPRDColumn" msprop:Generator_UserColumnName="TOTALPRD" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VendasXProdutoXGrupo" msprop:Generator_UserTableName="VendasXProdutoXGrupo" msprop:Generator_RowEvArgName="VendasXProdutoXGrupoRowChangeEvent" msprop:Generator_TableVarName="tableVendasXProdutoXGrupo" msprop:Generator_TablePropName="VendasXProdutoXGrupo" msprop:Generator_RowDeletingName="VendasXProdutoXGrupoRowDeleting" msprop:Generator_RowChangingName="VendasXProdutoXGrupoRowChanging" msprop:Generator_RowDeletedName="VendasXProdutoXGrupoRowDeleted" msprop:Generator_RowEvHandlerName="VendasXProdutoXGrupoRowChangeEventHandler" msprop:Generator_TableClassName="VendasXProdutoXGrupoDataTable" msprop:Generator_RowChangedName="VendasXProdutoXGrupoRowChanged" msprop:Generator_RowClassName="VendasXProdutoXGrupoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VENDEDOR" msprop:Generator_ColumnVarNameInTable="columnVENDEDOR" msprop:Generator_ColumnPropNameInRow="VENDEDOR" msprop:Generator_ColumnPropNameInTable="VENDEDORColumn" msprop:Generator_UserColumnName="VENDEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GRUPO" msprop:Generator_ColumnVarNameInTable="columnGRUPO" msprop:Generator_ColumnPropNameInRow="GRUPO" msprop:Generator_ColumnPropNameInTable="GRUPOColumn" msprop:Generator_UserColumnName="GRUPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REFERENCIA" msprop:Generator_ColumnVarNameInTable="columnREFERENCIA" msprop:Generator_ColumnPropNameInRow="REFERENCIA" msprop:Generator_ColumnPropNameInTable="REFERENCIAColumn" msprop:Generator_UserColumnName="REFERENCIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnDESCRICAO" msprop:Generator_ColumnPropNameInRow="DESCRICAO" msprop:Generator_ColumnPropNameInTable="DESCRICAOColumn" msprop:Generator_UserColumnName="DESCRICAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QTDETOTAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQTDETOTAL" msprop:Generator_ColumnPropNameInRow="QTDETOTAL" msprop:Generator_ColumnPropNameInTable="QTDETOTALColumn" msprop:Generator_UserColumnName="QTDETOTAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VALORTOTAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVALORTOTAL" msprop:Generator_ColumnPropNameInRow="VALORTOTAL" msprop:Generator_ColumnPropNameInTable="VALORTOTALColumn" msprop:Generator_UserColumnName="VALORTOTAL" type="xs:double" minOccurs="0" />
+              <xs:element name="QTDEFATURADA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQTDEFATURADA" msprop:Generator_ColumnPropNameInRow="QTDEFATURADA" msprop:Generator_ColumnPropNameInTable="QTDEFATURADAColumn" msprop:Generator_UserColumnName="QTDEFATURADA" type="xs:int" minOccurs="0" />
+              <xs:element name="PESSOA" msprop:Generator_ColumnVarNameInTable="columnPESSOA" msprop:Generator_ColumnPropNameInRow="PESSOA" msprop:Generator_ColumnPropNameInTable="PESSOAColumn" msprop:Generator_UserColumnName="PESSOA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PONTOS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPONTOS" msprop:Generator_ColumnPropNameInRow="PONTOS" msprop:Generator_ColumnPropNameInTable="PONTOSColumn" msprop:Generator_UserColumnName="PONTOS" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="TabCurvaVendedorXCliente_ProdutoXCliente" msdata:parent="TabCurvaVendedorXCliente" msdata:child="ProdutoXCliente" msdata:parentkey="Id_Vendedor Id_Pessoa" msdata:childkey="Id_Vendedor Id_Pessoa" msprop:Generator_UserChildTable="ProdutoXCliente" msprop:Generator_ChildPropName="GetProdutoXClienteRows" msprop:Generator_UserRelationName="TabCurvaVendedorXCliente_ProdutoXCliente" msprop:Generator_RelationVarName="relationTabCurvaVendedorXCliente_ProdutoXCliente" msprop:Generator_UserParentTable="TabCurvaVendedorXCliente" msprop:Generator_ParentPropName="TabCurvaVendedorXClienteRowParent" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
