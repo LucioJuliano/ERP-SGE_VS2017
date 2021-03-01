@@ -24,10 +24,11 @@ namespace ERP_SGE
         }
         private int VerificarCaixa()
         {
+            //Verificar se tem caixa Aberto
             int IdCaixa = 0;
             Controles.Verificar VerifCx = new Controles.Verificar();
             VerifCx.Controle = Controle;
-            IdCaixa = VerifCx.Verificar_ExisteCadastro("Id_Caixa", "SELECT ID_CAIXA FROM CAIXABALCAO WHERE STATUS=0 AND ID_Usuario=" + FrmPrincipal.Perfil_Usuario.IdUsuario.ToString());
+            IdCaixa = VerifCx.Verificar_ExisteCadastro("Id_Caixa", "SELECT T1.ID_CAIXA FROM CAIXABALCAO T1 WHERE T1.STATUS=0 AND T1.ID_Usuario=" + FrmPrincipal.Perfil_Usuario.IdUsuario.ToString());
             return IdCaixa;
         }
         private void FrmPDV_Load(object sender, EventArgs e)

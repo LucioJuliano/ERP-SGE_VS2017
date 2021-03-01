@@ -78,6 +78,7 @@
             this.BtnCupom.Text = "Imprimir Cupom Fiscal";
             this.BtnCupom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCupom.UseVisualStyleBackColor = true;
+            this.BtnCupom.Visible = false;
             this.BtnCupom.Click += new System.EventHandler(this.BtnCupom_Click);
             // 
             // BtnConcluir

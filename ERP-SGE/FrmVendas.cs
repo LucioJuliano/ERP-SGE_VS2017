@@ -3969,7 +3969,7 @@ namespace ERP_SGE
             MessageBox.Show("Fim");
             return;*/
 
-            string msg = "0003/001";            
+            string msg = "000003/001";            
             //Dados.Disconnect();            
             //return;
             Controles.ControleEstoque ControleEstoque = new ControleEstoque();
